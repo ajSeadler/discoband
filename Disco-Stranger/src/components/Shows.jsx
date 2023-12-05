@@ -55,7 +55,8 @@ const ShowImage = styled('img')(({ theme }) => ({
   maxHeight: '100%', // Ensure the image doesn't exceed the dialog height
   borderRadius: '8px',
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-  objectFit: 'contain', // Keep the aspect ratio without cropping
+  objectFit: 'contain',
+ // Keep the aspect ratio without cropping
 }));
 
 const FullImageDialog = styled(Dialog)(({ theme }) => ({
@@ -84,16 +85,23 @@ const CloseButton = styled(IconButton)(({ theme }) => ({
 
 const shows = [
   {
-    title: '51 St. Speakeasy',
-    date: 'December 2nd, 2023',
-    time: '8:00 - 12:00 PM',
-    price: '$5.00 ENTRY',
-    image: '/pics/dec2nd.jpeg',
+    title: 'CHECK BACK SOON!',
+    // date: 'December 2nd, 2023',
+    // time: '8:00 - 12:00 PM',
+    // price: '$5.00 ENTRY',
+    image: '/pics/drewncolton.JPG',
   },
   // Add more upcoming shows if needed
 ];
 
 const pastShows = [
+  {
+    title: '51 St. Speakeasy',
+    date: 'December 2nd, 2023',
+    time: '8:00 - 12:00 PM',
+    price: '$5.00 ENTRY',
+    image: '/pics/dec2up.png',
+  },
   {
     title: 'Live Room Fridays @ ACM',
     date: 'September 15, 2023',
@@ -193,16 +201,16 @@ const Shows = () => {
                 <ShowImage src={show.image} alt={`Band Picture ${index}`} />
                 <ShowCardContent>
                   <Typography variant="h6">{show.title}</Typography>
-                  <Typography>Date: {show.date}</Typography>
+                  {/* <Typography>Date: {show.date}</Typography>
                   <Typography>Time: {show.time}</Typography>
-                  <Typography>Price: {show.price}</Typography>
+                  <Typography>Price: {show.price}</Typography> */}
                 </ShowCardContent>
               </ShowCard>
             </Grid>
           ))}
         </ShowsContainer>
 
-        <Typography variant="h4" gutterBottom style={{color:'white'}}>
+        <Typography variant="h4" gutterBottom style={{color:'white', marginTop:'10px'}}>
           PAST SHOWS
         </Typography>
         <ShowsContainer container spacing={4}>
