@@ -3,4 +3,71 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #333;
 }
+
+/* HomePage.css */
+/* HomePage.css */
+.hero-section {
+  background-size: cover;
+  background-position: center top;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 20px;
+  background-image: url(/public/pics/bluePink.jpg);  /* Default image */
+}
+
+.hero-section button {
+  background-color: rgb(237, 102, 87);
+}
+
+.img {
+  max-width: 20vh;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-size: contain;
+    background-image: url(/public/pics/ep.jpg);  /* Mobile image */
+  }
+
+  .hero-text {
+    font-size: 14px;
+    backdrop-filter: blur(2px); /* Add backdrop filter for background blur */
+    background-color: rgba(64, 64, 64, 0.148);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .hero-text h4 {
+    color: white;
+  }
+
+  .video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .video-card {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+}
+
+

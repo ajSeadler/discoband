@@ -1,8 +1,10 @@
 // App.jsx
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import NavBar from './NavBar';
-import Home from './Home'; // Replace with your actual component imports
+import NavBar from './components/NavBar';
+import Home from './components/Home'; 
+import AboutUs from './components/AboutUs';
+import Shows from './components/Shows';// Replace with your actual component imports
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path='/about' element={<AboutUs />} />
+        <Route path='/shows' element={<Shows />} />
         {/* Add more routes for your other components */}
       </Routes>
     </div>
