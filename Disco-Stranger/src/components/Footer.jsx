@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Paper, Typography, Grid } from '@mui/material';
+import ThreeScene from './ThreeContactScene';
 
 const SpotifyIcon = () => (
   <i className="fa fa-spotify" aria-hidden="true" style={{ color: '#1db954', fontSize: '2.5rem' }} />
@@ -34,6 +35,7 @@ const Footer = () => {
         <Typography variant="body2" align="center" style={{ color: 'white', marginTop: '10px' }}>
           © 2023 Disco Stranger Music. All rights reserved.
         </Typography>
+        {/* <ThreeScene /> */}
       </Container>
     </Paper>
   );

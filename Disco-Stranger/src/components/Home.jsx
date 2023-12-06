@@ -1,6 +1,7 @@
 // HomePage.jsx
 import React from 'react';
 import { Paper, Typography, Button, Card, CardMedia, CardContent } from '@mui/material';
+import ThreeScene from './ThreeContactScene';
 
 
 const Home = () => {
@@ -70,7 +71,9 @@ const Home = () => {
           </a>
         </div>
         </div>
+        
       </Paper>
+        
        {/* Parent div for iframes */}
        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container, Paper, Typography, Link, Grid } from '@mui/material';
-
+import ThreeContactScene from './ThreeContactScene';
 const Contact = () => {
   return (
     <Container maxWidth="md">
       <Paper elevation={3} style={{ padding: '30px', marginTop: '20px', borderRadius: '15px' }}>
+        {/* <ThreeContactScene /> */}
         <Typography variant="h4" gutterBottom>
           CONTACT
         </Typography>
