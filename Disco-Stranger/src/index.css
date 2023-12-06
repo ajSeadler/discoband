@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -49,12 +49,12 @@ body {
     display: flex;
     flex-direction: column;
     background-size: contain;
-    background-image: url(/public/pics/ep.jpg);  /* Mobile image */
+    background-image: url(/public/pics/bluePink.jpg);  /* Mobile image */
   }
 
   .hero-text {
     font-size: 14px;
-    backdrop-filter: blur(2px); /* Add backdrop filter for background blur */
+    backdrop-filter: blur(1px); /* Add backdrop filter for background blur */
     background-color: rgba(64, 64, 64, 0.148);
     padding: 10px;
     border-radius: 10px;

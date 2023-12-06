@@ -32,8 +32,8 @@ const AboutUs = () => {
       <Grid container spacing={4}>
         {/* Left Column with Text */}
         <Grid item xs={12} md={6}>
-        <Typography variant="h3" gutterBottom style={{ color: "#fff" }}>
-  Get To Know Us!
+        <Typography variant="h4" gutterBottom style={{ color: "#fff" }}>
+  ABOUT US
 </Typography>
 
           <img
@@ -57,7 +57,7 @@ const AboutUs = () => {
             heard one too many “PLAY KID ROCK!” requests and decided to write their own original material. The band name
             is an ode to the Eagles and their song “Disco Strangler”, a band they covered quite a bit and grew up on. 
           </Typography>
-          <Typography variant="h6" gutterBottom style={{ color: "rgb(237, 102, 87)" }}>
+          <Typography variant="h6" gutterBottom style={{ color: "rbg(204,204,204)" }}>
   Meet the incredible talents that form the heart and soul of Disco Stranger:
 </Typography>
 
@@ -69,7 +69,7 @@ const AboutUs = () => {
   </li>
   <li>
     <Typography variant="body1" style={{color:"white"}}>
-      <strong>Aj Seadler:</strong> Lead Guitar
+      <strong>AJ Seadler:</strong> Lead Guitar
     </Typography>
   </li>
   <li>
@@ -94,7 +94,7 @@ const AboutUs = () => {
         </Grid>
 
         {/* Right Column with Images */}
-        <ImageContainer item xs={12} md={6} container justifyContent="c" style={{marginTop:'4.8%'}}>
+        <ImageContainer item xs={12} md={6} container justifyContent="c" style={{marginTop:'3.5%'}}>
           {images.map((image, index) => (
             <Grid item key={index}>
               <img

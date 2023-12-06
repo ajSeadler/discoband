@@ -6,7 +6,7 @@ const Contact = () => {
     <Container maxWidth="md">
       <Paper elevation={3} style={{ padding: '30px', marginTop: '20px', borderRadius: '15px' }}>
         <Typography variant="h4" gutterBottom>
-          Contact
+          CONTACT
         </Typography>
         
         <Typography variant="body1" paragraph>

@@ -34,12 +34,15 @@ const ShowCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   backgroundColor:'#f5f5f5',
+  maxHeight:'100%',
   height: '100%', // Set a fixed height for the card
+  overflow: 'hidden',
   cursor: 'pointer',
   transition: 'transform 0.2s ease-in-out',
   '&:hover': {
     transform: 'scale(1.05)',
   },
+  // clipPath: 'polygon(0 30%, 100% 0, 100% 100%, 0 100%)',
 }));
 
 const ShowCardContent = styled(CardContent)(({ theme }) => ({
@@ -53,7 +56,7 @@ const ShowImage = styled('img')(({ theme }) => ({
   width: '100%',
   height: '100%',
   maxHeight: '100%', // Ensure the image doesn't exceed the dialog height
-  borderRadius: '8px',
+  borderRadius: '0px',
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
   objectFit: 'contain',
  // Keep the aspect ratio without cropping
@@ -175,9 +178,12 @@ const pastShows = [
   // Add more past shows if needed
 ];
 
+const showsPerPage = 4;
+
 const Shows = () => {
   const [open, setOpen] = useState(false);
   const [selectedShow, setSelectedShow] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const handleCardClick = (show) => {
     setSelectedShow(show);
@@ -188,10 +194,26 @@ const Shows = () => {
     setOpen(false);
   };
 
+  const indexOfLastShow = currentPage * showsPerPage;
+  const indexOfFirstShow = indexOfLastShow - showsPerPage;
+  const currentShows = pastShows.slice(indexOfFirstShow, indexOfLastShow);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    const pastShowsAnchor = document.getElementById('pastShows');
+    if (pastShowsAnchor) {
+      const topOffset = pastShowsAnchor.offsetTop;
+      window.scrollTo({
+        top: topOffset,
+        behavior: 'smooth', // Optional: Use smooth scrolling
+      });
+    }
+  };
+
   return (
     <div>
       <ShowsPaper elevation={3}>
-        <Typography variant="h4" gutterBottom style={{color:'white'}}>
+        <Typography variant="h4" gutterBottom style={{ color: 'white' }}>
           UPCOMING SHOWS
         </Typography>
         <ShowsContainer container spacing={4}>
@@ -201,20 +223,21 @@ const Shows = () => {
                 <ShowImage src={show.image} alt={`Band Picture ${index}`} />
                 <ShowCardContent>
                   <Typography variant="h6">{show.title}</Typography>
-                  {/* <Typography>Date: {show.date}</Typography>
-                  <Typography>Time: {show.time}</Typography>
-                  <Typography>Price: {show.price}</Typography> */}
                 </ShowCardContent>
               </ShowCard>
             </Grid>
           ))}
         </ShowsContainer>
-
-        <Typography variant="h4" gutterBottom style={{color:'white', marginTop:'10px'}}>
+  
+        <Typography variant="h4" gutterBottom style={{ color: 'white', marginTop: '10px' }}>
           PAST SHOWS
         </Typography>
+  
+        {/* Anchor point for top of past shows section */}
+        <div id="pastShows" />
+  
         <ShowsContainer container spacing={4}>
-          {pastShows.map((show, index) => (
+          {currentShows.map((show, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <ShowCard onClick={() => handleCardClick(show)}>
                 <ShowImage src={show.image} alt={`Band Picture ${index}`} />
@@ -228,8 +251,17 @@ const Shows = () => {
             </Grid>
           ))}
         </ShowsContainer>
+  
+        {/* Pagination */}
+        <Grid container justifyContent="center" style={{ marginTop: '20px', }}>
+          {[...Array(Math.ceil(pastShows.length / showsPerPage)).keys()].map((pageNumber) => (
+            <Button key={pageNumber + 1} onClick={() => paginate(pageNumber + 1)} style={{color:'rgb(237, 102, 87)'}}>
+              {pageNumber + 1}
+            </Button>
+          ))}
+        </Grid>
       </ShowsPaper>
-
+  
       <FullImageDialog open={open} onClose={handleClose}>
         <FullImageDialogContent>
           <CloseButton aria-label="close" onClick={handleClose}>
@@ -240,6 +272,7 @@ const Shows = () => {
       </FullImageDialog>
     </div>
   );
-};
+  
+          };  
 
 export default Shows;

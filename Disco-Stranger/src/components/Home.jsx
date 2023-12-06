@@ -35,7 +35,7 @@ const Home = () => {
           Listen on Spotify
         </Button>
 
-        <Button className="music-btn"variant="contained" color="primary" onClick={() => window.open('https://music.apple.com/', '_blank')}>
+        <Button className="music-btn"variant="contained" color="primary" onClick={() => window.open('https://music.apple.com/us/album/disco-stranger-ep/1647759571', '_blank')}>
           Listen on Apple Music
         </Button>
         {/* SVG Icons */}
@@ -73,6 +73,17 @@ const Home = () => {
       </Paper>
        {/* Parent div for iframes */}
        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+
+          {/* Apple Music iframe */}
+          <iframe
+            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+            frameBorder="0"
+            height="450"
+            style={{ width: '100%', maxWidth: '98%', overflow: 'hidden', borderRadius: '10px', margin:'5px' }}
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
+          ></iframe>
+
           {/* Spotify iframe */}
           <iframe
             style={{ borderRadius: '12px', marginBottom: '10px' }}
@@ -85,15 +96,7 @@ const Home = () => {
             loading="lazy"
           ></iframe>
 
-          {/* Apple Music iframe */}
-          <iframe
-            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-            frameBorder="0"
-            height="450"
-            style={{ width: '100%', maxWidth: '98%', overflow: 'hidden', borderRadius: '10px', margin:'10px' }}
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
-          ></iframe>
+          
         </div>
       
 
