@@ -1,6 +1,6 @@
 // HomePage.jsx
 import React, { useState } from 'react';
-import { Paper, Button, Typography, Card, CardMedia, CardContent } from '@mui/material';
+import { Paper, Button, Typography, Card, CardMedia, CardContent, Dialog, DialogContent } from '@mui/material';
 import { styled } from '@mui/system';
 
 const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
@@ -12,9 +12,12 @@ const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   color: '#fff',
   textAlign: 'center',
   padding: '20%',
-  background: `radial-gradient(circle at ${mouseX}px ${mouseY}px, #2196F3, #E91E63)`, // Dynamic radial gradient
+  background: `radial-gradient(circle at ${mouseX}px ${mouseY}px, #2196F3, #E91E63)`,
   transition: 'filter 0.5s ease',
   filter: isHovered ? 'blur(0px)' : 'blur(0)',
+  '@media (max-width: 768px)': {
+    height: '75vh', // Adjust the height for mobile screens
+  },
 }));
 
 const ImageContainer = styled('div')({
@@ -27,30 +30,85 @@ const ImageContainer = styled('div')({
 const Images = styled('div')({
   display: 'flex',
   gap: '10px',
-  flexDirection: 'row', // Set to 'row' for left-to-right arrangement
-  justifyContent: 'center', // Optional: adjust as needed
-  alignItems: 'center', // Optional: adjust as needed
-  flexWrap: 'wrap', // Clear flexWrap for 1x4 arrangement on mobile
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
+  
+  
 });
 
 const Image = styled('img')({
-  width: '100px', // Adjust the size as needed
-  height: '100px',
-  borderRadius: '50%', // Make it rounded
+  width: '20%',
+  height: '20%',
+  borderRadius: '50%',
+  transition: 'transform 0.3s ease-in-out', // Added transition for smooth effect
+
+  '&:hover': {
+    transform: 'scale(1.1)', // Increase scale on hover
+  },
   '@media (max-width: 768px)': {
-    width: '60px', // Adjust the size for mobile devices
-    height: '60px',
+    width: '45%',
+    height: '45%',
   },
 });
+
+const ModalContainer = styled(DialogContent)({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});
+
+const Modal = ({ isOpen, onClose, image, name, bio, inst }) => {
+  return (
+    <Dialog open={isOpen} onClose={onClose}>
+      <ModalContainer>
+        <Card>
+          <CardMedia component="img" height="200" image={image} alt={name} />
+          <CardContent>
+            <Typography variant="h5">{name}</Typography>
+            <Typography variant="body2">{inst}</Typography>
+            <Typography variant="body2">{bio}</Typography>
+          </CardContent>
+        </Card>
+      </ModalContainer>
+    </Dialog>
+  );
+};
 
 const Home = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const images = ['/pics/Nat.jpg', '/pics/drewhead.jpg', '/pics/col.jpg', '/pics/aj.jpg'];
+  const names = ['Nathaniel Lee', 'Drew Stogsdill', 'Colton Walkup', 'AJ Seadler'];
+  const bios = [
+    '', //nat
+    '', //drew
+    '', //colton
+    '', //aj
+  ];
+   const inst = [
+    'Drums',
+    'Lead Vocals and Guitar',
+    'Bass Guitar',
+    'Lead Guitar'
+   ]
 
   const handleMouseMove = (event) => {
     const { clientX, clientY } = event;
     setMousePos({ x: clientX, y: clientY });
+  };
+
+  const handleImageClick = (index) => {
+    setSelectedImage(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage(null);
   };
 
   return (
@@ -65,6 +123,7 @@ const Home = () => {
         mouseX={mousePos.x}
         mouseY={mousePos.y}
       >
+          {/* <Typography variant="h4" style={{ marginBottom: '10px', display: 'block', textAlign: 'center' }}>DISCO</Typography> */}
         <ImageContainer>
           <Images>
             {/* Render 4 fixed images */}
@@ -73,69 +132,52 @@ const Home = () => {
                 key={index}
                 src={image}
                 alt={`Image ${index + 1}`}
+                onClick={() => handleImageClick(index)}
               />
             ))}
           </Images>
         </ImageContainer>
+        {/* <Typography variant="h4" style={{ marginTop: '150%', display: 'block', textAlign: 'center' }}>STRANGER</Typography> */}
 
         <div className="hero-text-fade-in">
-          {/* <Button
-            className="music-btn"
-            variant="contained"
-            color="primary"
-            onClick={() =>
-              window.open(
-                'https://open.spotify.com/album/0PptqapSMqfkrNGHcWKTIR?si=bAcOqcsdQAKNpvpo6kFvRA',
-                '_blank'
-              )
-            }
-          >
-            Listen on Spotify
-          </Button>
-
-          <Button
-            className="music-btn"
-            variant="contained"
-            color="primary"
-            onClick={() =>
-              window.open(
-                'https://music.apple.com/us/album/disco-stranger-ep/1647759571',
-                '_blank'
-              )
-            }
-          >
-            Listen on Apple Music
-          </Button> */}
+          {/* Additional code if needed */}
         </div>
       </HeroSection>
-       {/* Parent div for iframes */}
-       <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
 
-          {/* Apple Music iframe */}
-          <iframe
-            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-            frameBorder="0"
-            height="450"
-            style={{ width: '100%', maxWidth: '98%', overflow: 'hidden', borderRadius: '0px', margin:'5px' }}
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
-          ></iframe>
+      {/* Modal */}
+      <Modal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        image={images[selectedImage]}
+        name={names[selectedImage]}
+        bio={bios[selectedImage]}
+        inst={inst[selectedImage]}
+      />
 
-          {/* Spotify iframe */}
-          <iframe
-            style={{ borderRadius: '0px', marginBottom: '10px' }}
-            src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
-            width="100%"
-            height="352"
-            frameBorder="0"
-            allowFullScreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
+      {/* Parent div for iframes */}
+      <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+        {/* Apple Music iframe */}
+        <iframe
+          allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+          frameBorder="0"
+          height="450"
+          style={{ width: '100%', maxWidth: '98%', overflow: 'hidden', borderRadius: '0px', margin: '5px' }}
+          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+          src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
+        ></iframe>
 
-          
-        </div>
-      
+        {/* Spotify iframe */}
+        <iframe
+          style={{ borderRadius: '0px', marginBottom: '10px' }}
+          src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          allowFullScreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+      </div>
 
       {/* Video Section */}
       <Paper className='video-section'
@@ -143,10 +185,10 @@ const Home = () => {
         style={{
           padding: '20px',
           marginTop: '20px',
-          backgroundColor:'#333'
+          backgroundColor: '#333'
         }}
       >
-        <Typography variant="h4" gutterBottom style={{color:'white'}}>
+        <Typography variant="h4" gutterBottom style={{ color: 'white' }}>
           Watch Our Latest Videos
         </Typography>
 
@@ -161,13 +203,13 @@ const Home = () => {
             />
             <CardContent>
               <Typography variant="body2" color="text.secondary">
-              Disco Stranger - LIVE @ Speakeasy / Special Jam
+                Disco Stranger - LIVE @ Speakeasy / Special Jam
               </Typography>
             </CardContent>
           </Card>
 
           {/* Second Video */}
-          <Card  className='video-card'>
+          <Card className='video-card'>
             <CardMedia
               component="iframe"
               height="200"
