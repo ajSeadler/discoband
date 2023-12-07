@@ -1,21 +1,35 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, useMediaQuery } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useMediaQuery,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery("(max-width:600px)");
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
     setDrawerOpen(open);
   };
 
   const navLinks = (
-    <List style={{ position: 'relative', height: '100%' }}>
+    <List style={{ position: "relative", height: "100%" }}>
       <ListItem button component={Link} to="/">
         <ListItemText primary="Home" />
       </ListItem>
@@ -29,18 +43,18 @@ const NavBar = () => {
         <ListItemText primary="Contact" />
       </ListItem>
       {/* Logo as a footer */}
-      <ListItem style={{ position: 'absolute', bottom: 0, width: '100%' }}>
-        <img
+      <ListItem style={{ position: "absolute", bottom: 0, width: "100%" }}>
+        <img className="logodes"
           src="/pics/discologo.PNG"
           alt="Your Band Logo"
-          style={{ height: '40px', width: 'auto', margin: 'auto' }}
+          style={{ height: "40px", width: "auto", margin: "auto" }}
         />
       </ListItem>
     </List>
   );
 
   return (
-    <AppBar position="sticky" sx={{ background: '#333' }}>
+    <AppBar position="sticky" sx={{ background: "#333" }}>
       <Toolbar>
         {isMobile ? (
           <>
@@ -53,7 +67,17 @@ const NavBar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Drawer anchor="left" open={drawerOpen} onClick={toggleDrawer(false)} style={{ width: '60%', backgroundColor:'rgba(237, 102, 87, 0.25)' }}>
+            <Drawer
+              anchor="top"
+              open={drawerOpen}
+              onClick={toggleDrawer(false)}
+              style={{
+                width: "60%",
+                position: "absolute", // Use absolute positioning
+                top: "80%", // Position the top of the Drawer at the bottom of the nav bar
+                marginTop: "25px", // Adjust the margin as needed
+              }}
+            >
               {navLinks}
             </Drawer>
           </>
@@ -63,7 +87,7 @@ const NavBar = () => {
             <img
               src="/pics/discologo.PNG"
               alt="Your Band Logo"
-              style={{ height: '40px', marginRight: 'auto' }}
+              style={{ height: "40px", marginRight: "auto" }}
             />
             {/* Navigation buttons */}
             <div>

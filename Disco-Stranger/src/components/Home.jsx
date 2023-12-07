@@ -24,7 +24,7 @@ const Home = () => {
           
         }}
       >
-        <div className="hero-text">
+        <div className="hero-text-fade-in">
         <Typography variant="h4" gutterBottom className='hero-text'> 
           Disco Stranger EP Out Now!
         </Typography>
@@ -79,14 +79,14 @@ const Home = () => {
             allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
             frameBorder="0"
             height="450"
-            style={{ width: '100%', maxWidth: '98%', overflow: 'hidden', borderRadius: '10px', margin:'5px' }}
+            style={{ width: '100%', maxWidth: '98%', overflow: 'hidden', borderRadius: '0px', margin:'5px' }}
             sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
             src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
           ></iframe>
 
           {/* Spotify iframe */}
           <iframe
-            style={{ borderRadius: '12px', marginBottom: '10px' }}
+            style={{ borderRadius: '0px', marginBottom: '10px' }}
             src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
             width="100%"
             height="352"

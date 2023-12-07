@@ -7,7 +7,7 @@ const SpotifyIcon = () => (
 
 const Footer = () => {
   return (
-    <Paper elevation={3} style={{ padding: '20px', marginTop: '20px', backgroundColor: '#282c34' }}>
+    <Paper elevation={3} style={{ padding: '20px', marginTop: 'auto', backgroundColor: '#282c34', }}>
       <Container maxWidth="md">
         {/* <Grid container spacing={2} justifyContent="center">
           <Grid item>

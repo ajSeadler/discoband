@@ -19,13 +19,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const ShowsPaper = styled(Paper)(({ theme }) => ({
   padding: '50px',
-  marginTop: '20px',
+  marginTop: '10px',
   backgroundColor: '#333', // Light gray background
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
 }));
 
 const ShowsContainer = styled(Grid)(({ theme }) => ({
-  marginTop: '20px',
+  marginTop: '10px',
   display: 'flex',
   justifyContent: 'center',
 }));
@@ -65,9 +65,9 @@ const ShowImage = styled('img')(({ theme }) => ({
 const FullImageDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialog-paper': {
     // maxWidth: '50%', // Adjust the maximum width as needed
-    width: '50%',
+    // width: '80%',
     // maxHeight: '50%',
-    height: '50%',
+    // height: '80%',
     overflow: 'hidden',
   },
 }));
@@ -213,7 +213,7 @@ const Shows = () => {
   return (
     <div>
       <ShowsPaper elevation={3}>
-        <Typography variant="h4" gutterBottom style={{ color: 'white' }}>
+        <Typography variant="h4" gutterBottom style={{ color: 'white', marginTop:'-20px' }}>
           UPCOMING SHOWS
         </Typography>
         <ShowsContainer container spacing={4}>
@@ -229,7 +229,7 @@ const Shows = () => {
           ))}
         </ShowsContainer>
   
-        <Typography variant="h4" gutterBottom style={{ color: 'white', marginTop: '10px' }}>
+        <Typography variant="h4" gutterBottom style={{ color: 'white', marginTop: '20px' }}>
           PAST SHOWS
         </Typography>
   

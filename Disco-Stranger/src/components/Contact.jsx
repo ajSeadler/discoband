@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <Container maxWidth="md">
       <Paper elevation={3} style={{ padding: '30px', marginTop: '20px', borderRadius: '15px' }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h5" gutterBottom>
           CONTACT
         </Typography>
         
@@ -39,6 +39,7 @@ const Contact = () => {
             <Link href="https://www.spotify.com" target="_blank" rel="noopener noreferrer">
               <img src="pics/spotify.svg" alt="Spotify" style={{ height: '40px', borderRadius: '10px' }} />
             </Link>
+            
           </Grid>
         </Grid>
 
@@ -49,7 +50,9 @@ const Contact = () => {
             discostrangermusic@gmail.com
           </Link>
         </Typography> */}
+        {/* <img src="/pics/discologo.PNG" alt="" style={{ height: '40px', width: 'auto', maxWidth: '40px' }} /> */}
       </Paper>
+      
     </Container>
   );
 };
