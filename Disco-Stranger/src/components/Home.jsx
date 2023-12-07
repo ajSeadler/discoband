@@ -1,76 +1,113 @@
 // HomePage.jsx
-import React from 'react';
-import { Paper, Typography, Button, Card, CardMedia, CardContent } from '@mui/material';
+import React, { useState } from 'react';
+import { Paper, Button, Typography, Card, CardMedia, CardContent } from '@mui/material';
+import { styled } from '@mui/system';
 
+const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  color: '#fff',
+  textAlign: 'center',
+  padding: '20%',
+  background: `radial-gradient(circle at ${mouseX}px ${mouseY}px, #2196F3, #E91E63)`, // Dynamic radial gradient
+  transition: 'filter 0.5s ease',
+  filter: isHovered ? 'blur(0px)' : 'blur(0)',
+}));
+
+const ImageContainer = styled('div')({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+});
+
+const Images = styled('div')({
+  display: 'flex',
+  gap: '10px',
+  flexDirection: 'row', // Set to 'row' for left-to-right arrangement
+  justifyContent: 'center', // Optional: adjust as needed
+  alignItems: 'center', // Optional: adjust as needed
+  flexWrap: 'wrap', // Clear flexWrap for 1x4 arrangement on mobile
+});
+
+const Image = styled('img')({
+  width: '100px', // Adjust the size as needed
+  height: '100px',
+  borderRadius: '50%', // Make it rounded
+  '@media (max-width: 768px)': {
+    width: '60px', // Adjust the size for mobile devices
+    height: '60px',
+  },
+});
 
 const Home = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const images = ['/pics/Nat.jpg', '/pics/drewhead.jpg', '/pics/col.jpg', '/pics/aj.jpg'];
+
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    setMousePos({ x: clientX, y: clientY });
+  };
+
   return (
     <div>
       {/* Hero Section */}
-      <Paper className='hero-section'
+      <HeroSection
         elevation={3}
-        style={{
-        //   backgroundImage: 'url(/pics/bluePink.jpg)',
-        //   backgroundSize: 'cover',
-        //   backgroundPosition: 'center top',
-        //   height: '500px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: '#fff',
-          textAlign: 'center',
-          padding: '20px',
-          
-        }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onMouseMove={handleMouseMove}
+        isHovered={isHovered}
+        mouseX={mousePos.x}
+        mouseY={mousePos.y}
       >
-        <div className="hero-text-fade-in">
-        <Typography variant="h4" gutterBottom className='hero-text'> 
-          Disco Stranger EP Out Now!
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Immerse yourself in the latest sounds and stories from our new EP
-        </Typography>
-        <Button className="music-btn" variant="contained" color="primary" onClick={() => window.open('https://open.spotify.com/album/0PptqapSMqfkrNGHcWKTIR?si=bAcOqcsdQAKNpvpo6kFvRA', '_blank')}>
-          Listen on Spotify
-        </Button>
+        <ImageContainer>
+          <Images>
+            {/* Render 4 fixed images */}
+            {images.map((image, index) => (
+              <Image
+                key={index}
+                src={image}
+                alt={`Image ${index + 1}`}
+              />
+            ))}
+          </Images>
+        </ImageContainer>
 
-        <Button className="music-btn"variant="contained" color="primary" onClick={() => window.open('https://music.apple.com/us/album/disco-stranger-ep/1647759571', '_blank')}>
-          Listen on Apple Music
-        </Button>
-        {/* SVG Icons */}
-        <div style={{ marginTop: '20px' }} className='svg-icons'>
-          <a href="https://www.facebook.com/discostrangerband/" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./pics/facebook.svg"
-              alt="Facebook"
-              style={{ height: '30px', marginRight: '10px' }}
-            />
-          </a>
-          <a href="https://www.instagram.com/discostranger/?hl=en" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./pics/instagram.svg"
-              alt="Instagram"
-              style={{ height: '30px', marginRight: '10px' }}
-            />
-          </a>
-          <a href="https://www.youtube.com/@discostranger7103" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./pics/youtube.svg"
-              alt="YouTube"
-              style={{ height: '30px', marginRight: '10px' }}
-            />
-          </a>
-          <a href="https://open.spotify.com/artist/3SwSE7OtWzLOrc32Eq54gO?si=1l5RDObgTtOVgBzaJ-FWPw" target="_blank" rel="noopener noreferrer">
-            <img
-              src="./pics/spotify.svg"
-              alt="Spotify"
-              style={{ height: '30px', marginRight: '10px' }}
-            />
-          </a>
+        <div className="hero-text-fade-in">
+          {/* <Button
+            className="music-btn"
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              window.open(
+                'https://open.spotify.com/album/0PptqapSMqfkrNGHcWKTIR?si=bAcOqcsdQAKNpvpo6kFvRA',
+                '_blank'
+              )
+            }
+          >
+            Listen on Spotify
+          </Button>
+
+          <Button
+            className="music-btn"
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              window.open(
+                'https://music.apple.com/us/album/disco-stranger-ep/1647759571',
+                '_blank'
+              )
+            }
+          >
+            Listen on Apple Music
+          </Button> */}
         </div>
-        </div>
-      </Paper>
+      </HeroSection>
        {/* Parent div for iframes */}
        <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
 
