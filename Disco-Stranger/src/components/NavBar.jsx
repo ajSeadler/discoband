@@ -44,7 +44,8 @@ const NavBar = () => {
       </ListItem>
       {/* Logo as a footer */}
       <ListItem style={{ position: "absolute", bottom: 0, width: "100%" }}>
-        <img className="logodes"
+        <img
+          className="logodes"
           src="/pics/discologo.PNG"
           alt="Your Band Logo"
           style={{ height: "40px", width: "auto", margin: "auto" }}
@@ -73,9 +74,14 @@ const NavBar = () => {
               onClick={toggleDrawer(false)}
               style={{
                 width: "60%",
-                position: "absolute", // Use absolute positioning
-                top: "80%", // Position the top of the Drawer at the bottom of the nav bar
-                marginTop: "25px", // Adjust the margin as needed
+                position: "absolute",
+                top: "80%",
+                marginTop: "25px",
+              }}
+              PaperProps={{
+                style: {
+                  backgroundColor: "#C0E6DE",
+                },
               }}
             >
               {navLinks}
