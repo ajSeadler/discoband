@@ -20,20 +20,21 @@ import CloseIcon from '@mui/icons-material/Close';
 const ShowsPaper = styled(Paper)(({ theme }) => ({
   padding: '50px',
   marginTop: '10px',
-  backgroundColor: '#333', // Light gray background
+  background: `radial-gradient(circle, #1C6E8C, #2A7F62)`, // Light gray background
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
 }));
 
 const ShowsContainer = styled(Grid)(({ theme }) => ({
   marginTop: '10px',
   display: 'flex',
-  justifyContent: 'center',
+  justifyContent: 'flex-start',
 }));
 
 const ShowCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
-  backgroundColor:'#f5f5f5',
+  backgroundColor:'#89909F',
+  color:'white',
   maxHeight:'100%',
   height: '100%', // Set a fixed height for the card
   overflow: 'hidden',
@@ -213,10 +214,10 @@ const Shows = () => {
   return (
     <div>
       <ShowsPaper elevation={3}>
-        <Typography variant="h4" gutterBottom style={{ color: 'white', marginTop:'-20px' }}>
-          UPCOMING SHOWS
-        </Typography>
-        <ShowsContainer container spacing={4}>
+        <div className="custom-font-shows"><h1>UPCOMING SHOWS</h1>
+        <h3 style={{fontFamily:'sans-serif'}}>There are currently no upcoming shows.</h3></div>
+        {/* this is the current show container - commented out when no shows. */}
+        {/* <ShowsContainer container spacing={4}>
           {shows.map((show, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <ShowCard onClick={() => handleCardClick(show)}>
@@ -227,11 +228,9 @@ const Shows = () => {
               </ShowCard>
             </Grid>
           ))}
-        </ShowsContainer>
+        </ShowsContainer> */}
   
-        <Typography variant="h4" gutterBottom style={{ color: 'white', marginTop: '20px' }}>
-          PAST SHOWS
-        </Typography>
+        <div className="custom-font-shows"><h1>PAST SHOWS</h1></div>
   
         {/* Anchor point for top of past shows section */}
         <div id="pastShows" />

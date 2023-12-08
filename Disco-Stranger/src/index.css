@@ -9,6 +9,32 @@ body {
   background-color: #333;
 }
 
+/* styles.css */
+
+@font-face {
+  font-family: 'YourCustomFont'; /* Choose a name for your font */
+  src: url('/public/GasoekOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the font to an element */
+.custom-font {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+  font-family: 'Gasoek One', sans-serif;
+}
+
+.custom-font-shows {
+  font-family: 'Gasoek One', sans-serif;
+  color: aliceblue;
+  
+}
+
+
 
 
 /* HomePage.css */
@@ -40,6 +66,7 @@ body {
 .video-home {
   display: flex;
   justify-content: space-around;
+  /* background: radial-gradient(circle, #2196F3, #E91E63); */
 }
 
 .img {
@@ -58,8 +85,62 @@ body {
   }
 }
 
+/* styles.css */
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+
 .hero-text-fade-in {
   animation: fadeIn 2s ease-out; /* Adjust the duration and easing as needed */
+}
+
+.images-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.images-container img {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@media (max-width: 768px) {
+  .images-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .images-container img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .custom-font{
+    font-size: 2.5rem;
+  }
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 

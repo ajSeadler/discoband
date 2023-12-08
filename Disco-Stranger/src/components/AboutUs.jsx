@@ -7,7 +7,7 @@ import { styled } from '@mui/system';
 const AboutUsPaper = styled(Paper)(({ theme }) => ({
   padding: '40px',
   marginTop: '20px',
-  backgroundColor: '#f0f0f0', // Light gray background
+  background: `radial-gradient(circle, #FABC2A, #5CA4A9)`, // Light gray background
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
   overflow: 'hidden', // Hide overflowing box shadow
   position: 'relative',
@@ -32,7 +32,7 @@ const AboutUs = () => {
       <Grid container spacing={4}>
         {/* Left Column with Text */}
         <Grid item xs={12} md={6}>
-        <Typography variant="h4" gutterBottom style={{ color: "#fff" }}>
+        <Typography variant="h4" gutterBottom style={{ color: "#fff", fontFamily: 'Gasoek One', }}>
   ABOUT US
 </Typography>
 
