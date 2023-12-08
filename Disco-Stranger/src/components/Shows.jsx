@@ -212,7 +212,7 @@ const Shows = () => {
   };
 
   return (
-    <div>
+    <div className='shows-pg'>
       <ShowsPaper elevation={3}>
         <div className="custom-font-shows"><h1>UPCOMING SHOWS</h1>
         <h3 style={{fontFamily:'sans-serif'}}>There are currently no upcoming shows.</h3></div>
