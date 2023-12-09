@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #333;
+  /* background-color: #333; */
 }
 
 .home-pg {
@@ -36,7 +36,7 @@ body {
 }
 
 .custom-font-shows {
-  font-family: 'Gasoek One', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   color: aliceblue;
   
 }
@@ -123,6 +123,10 @@ body {
   border-radius: 50%;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+}
+
+.about-pg {
+  background: radial-gradient(circle, #FABC2A, #5CA4A9)
 }
 
 @media (max-width: 768px) {

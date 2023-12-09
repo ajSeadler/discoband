@@ -19,7 +19,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const ShowsPaper = styled(Paper)(({ theme }) => ({
   padding: '50px',
-  marginTop: '10px',
+  marginTop: '0px',
   background: `radial-gradient(circle, #1C6E8C, #2A7F62)`, // Light gray background
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
 }));

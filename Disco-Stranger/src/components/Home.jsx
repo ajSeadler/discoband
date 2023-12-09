@@ -191,7 +191,7 @@ const Home = () => {
           <Typography
             variant="h4"
             gutterBottom
-            style={{ color: "white", fontFamily: "Gasoek One" }}
+            style={{ color: "white", fontFamily: "Bebas Neue" }}
           >
             Watch Our Latest Videos
           </Typography>

@@ -6,7 +6,7 @@ import { styled } from '@mui/system';
 // Styled components for enhanced styling
 const AboutUsPaper = styled(Paper)(({ theme }) => ({
   padding: '40px',
-  marginTop: '20px',
+  marginTop: '0px',
   background: `radial-gradient(circle, #FABC2A, #5CA4A9)`, // Light gray background
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
   overflow: 'hidden', // Hide overflowing box shadow
@@ -28,11 +28,12 @@ const AboutUs = () => {
   const theme = useTheme();
 
   return (
-    <AboutUsPaper elevation={3} style={{backgroundColor:'grey'}}>
+    <div className='about-pg'>
+    <AboutUsPaper elevation={3}>
       <Grid container spacing={4}>
         {/* Left Column with Text */}
         <Grid item xs={12} md={6}>
-        <Typography variant="h4" gutterBottom style={{ color: "#fff", fontFamily: 'Gasoek One', }}>
+        <Typography variant="h4" gutterBottom style={{ color: "#fff", fontFamily: 'Bebas Neue', }}>
   ABOUT US
 </Typography>
 
@@ -117,7 +118,9 @@ const AboutUs = () => {
         </ImageContainer>
       </Grid>
     </AboutUsPaper>
+    </div>
   );
+  
 };
 
 export default AboutUs;
