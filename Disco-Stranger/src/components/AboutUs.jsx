@@ -7,7 +7,7 @@ import { styled } from '@mui/system';
 const AboutUsPaper = styled(Paper)(({ theme }) => ({
   padding: '40px',
   marginTop: '0px',
-  background: `radial-gradient(circle, #FABC2A, #5CA4A9)`, // Light gray background
+  background: `radial-gradient(circle, #1C6E8C, #2A7F62)`, // Light gray background
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
   overflow: 'hidden', // Hide overflowing box shadow
   position: 'relative',

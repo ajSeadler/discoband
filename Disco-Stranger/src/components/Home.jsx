@@ -28,6 +28,7 @@ const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   },
 }));
 
+
 const ImageContainer = styled("div")({
   position: "absolute",
   top: "50%",
@@ -60,8 +61,9 @@ const Image = styled("img")({
 
 const ModalContainer = styled(DialogContent)({
   display: "flex",
+  background: `radial-gradient(circle, #2196F3, #E91E63)`,
   flexDirection: "column",
-  alignItems: "center",
+  alignItems: "center"
 });
 
 const Modal = ({ isOpen, onClose, image, name, bio, inst }) => {
@@ -72,7 +74,7 @@ const Modal = ({ isOpen, onClose, image, name, bio, inst }) => {
           <CardMedia
             component="img"
             height="200"
-            width="100"
+            width="50"
             image={image}
             alt={name}
           />
@@ -96,26 +98,26 @@ const Home = () => {
   const images = [
     "/pics/Nat.jpg",
     "/pics/drewhead.jpg",
-    "/pics/col.jpg",
     "/pics/aj.jpg",
+    "/pics/col.jpg",
   ];
   const names = [
     "Nathaniel Lee",
     "Drew Stogsdill",
-    "Colton Walkup",
     "AJ Seadler",
+    "Colton Walkup",
   ];
   const bios = [
     "", //nat
     "", //drew
-    "", //colton
     "", //aj
+    "", //col
   ];
   const inst = [
     "Drums",
     "Lead Vocals and Guitar",
-    "Bass Guitar",
     "Lead Guitar",
+    "Bass Guitar",
   ];
 
   const handleMouseMove = (event) => {
@@ -189,7 +191,7 @@ const Home = () => {
       >
        
           <Typography
-            variant="h4"
+            variant="h4"  
             gutterBottom
             style={{ color: "white", fontFamily: "Bebas Neue" }}
           >
@@ -241,11 +243,10 @@ const Home = () => {
             </CardContent>
           </Card>
         </div>
-      </Paper>
-      {/* Parent div for iframes */}
-      <div
+        <div
         style={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
       >
+        
         {/* Spotify iframe */}
         <iframe
           style={{ borderRadius: "0px", marginBottom: "10px", margin:'5px' }}
@@ -273,6 +274,9 @@ const Home = () => {
           src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
         ></iframe>
       </div>
+      </Paper>
+      {/* Parent div for iframes */}
+      
     </div>
   );
 };

@@ -30,27 +30,33 @@ const NavBar = () => {
 
   const navLinks = (
     <List style={{ position: "relative", height: "100%" }}>
-      <ListItem button component={Link} to="/">
-        <ListItemText primary="Home" />
-      </ListItem>
-      <ListItem button component={Link} to="/about">
-        <ListItemText primary="About" />
-      </ListItem>
-      <ListItem button component={Link} to="/shows">
-        <ListItemText primary="Shows" />
-      </ListItem>
-      <ListItem button component={Link} to="/contact">
-        <ListItemText primary="Contact" />
-      </ListItem>
-      {/* Logo as a footer */}
-      <ListItem style={{ position: "absolute", bottom: 0, width: "100%" }}>
-        <img
-          className="logodes"
-          src="/pics/discologo.PNG"
-          alt="Your Band Logo"
-          style={{ height: "40px", width: "auto", margin: "auto" }}
-        />
-      </ListItem>
+      <Typography
+        variant="h6"
+        style={{ textAlign: "center", margin: "10px", color: "#333", fontFamily:'Bebas Neue' }}
+      >
+        Disco Stranger
+      </Typography>
+     <ListItem button component={Link} to="/">
+      <ListItemText primary="Home" style={{ fontFamily: 'Gasoek One' }} />
+    </ListItem>
+    <ListItem button component={Link} to="/about">
+      <ListItemText primary="About" style={{ fontFamily: 'Gasoek One' }} />
+    </ListItem>
+    <ListItem button component={Link} to="/shows">
+      <ListItemText primary="Shows" style={{ fontFamily: 'Gasoek One' }} />
+    </ListItem>
+    <ListItem button component={Link} to="/contact">
+      <ListItemText primary="Contact" style={{ fontFamily: 'Gasoek One' }} />
+    </ListItem>
+    {/* Logo as a footer */}
+    <ListItem style={{ position: "absolute", bottom: 0, width: "100%" }}>
+      <img
+        className="logodes"
+        src="/pics/discologo.PNG"
+        alt="Band Logo"
+        style={{ height: "40px", width: "auto", margin: "auto" }}
+      />
+    </ListItem>
     </List>
   );
 
@@ -77,10 +83,13 @@ const NavBar = () => {
                 position: "absolute",
                 top: "80%",
                 marginTop: "25px",
+                fontFamily:'Gasoek One'
               }}
               PaperProps={{
                 style: {
-                  backgroundColor: "#C0E6DE",
+                  backgroundColor: "#C6D2ED",
+                
+                  
                 },
               }}
             >
@@ -97,16 +106,16 @@ const NavBar = () => {
             />
             {/* Navigation buttons */}
             <div>
-              <Button color="inherit" component={Link} to="/">
+              <Button color="inherit" style={{fontFamily:'Gasoek One'}} component={Link} to="/">
                 Home
               </Button>
-              <Button color="inherit" component={Link} to="/about">
+              <Button style={{fontFamily:'Gasoek One'}} color="inherit" component={Link} to="/about">
                 About
               </Button>
-              <Button color="inherit" component={Link} to="/shows">
+              <Button style={{fontFamily:'Gasoek One'}}color="inherit" component={Link} to="/shows">
                 Shows
               </Button>
-              <Button color="inherit" component={Link} to="/contact">
+              <Button style={{fontFamily:'Gasoek One'}}color="inherit" component={Link} to="/contact">
                 Contact
               </Button>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Paper, Typography, Link, Grid } from '@mui/material';
-import Footer from './Footer'; // Adjust the path based on your project structure
+
 
 const Contact = () => {
   return (
@@ -11,7 +11,7 @@ const Contact = () => {
             CONTACT
           </Typography>
           
-          <Typography variant="body1" paragraph>
+          <Typography variant="body1" paragraph style={{fontFamily:'Bebas Neue'}}>
             Want to book us? Reach out!
           </Typography>
           <Typography variant="h6" style={{ marginTop: '0px', display: 'flex', alignItems: 'center', marginBottom:'2%' }}>
@@ -45,7 +45,9 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Paper>
-      </Container>
+        
+      </Container> 
+      
 
       
     </div>

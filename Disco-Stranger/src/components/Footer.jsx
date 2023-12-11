@@ -7,9 +7,9 @@ const SpotifyIcon = () => (
 
 const Footer = () => {
   return (
-    <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#282c34', }}>
+    <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333', }}>
       <Container maxWidth="md">
-        <Typography variant="body2" align="center" style={{ color: 'white', marginTop: '10px' }}>
+        <Typography variant="body2" align="center" style={{ color: 'white', marginTop: '0px' }}>
           © 2023 Disco Stranger Music. All rights reserved.
         </Typography>
       </Container>
