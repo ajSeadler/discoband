@@ -83,7 +83,7 @@ const NavBar = () => {
                 position: "absolute",
                 top: "80%",
                 marginTop: "25px",
-                fontFamily:'Gasoek One'
+                fontFamily:'Gasoek One',
               }}
               PaperProps={{
                 style: {
