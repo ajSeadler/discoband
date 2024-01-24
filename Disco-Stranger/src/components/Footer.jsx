@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Paper, Typography } from '@mui/material';
+import { Container } from 'react-bootstrap';
 
 const SpotifyIcon = () => (
   <i className="fa fa-spotify" aria-hidden="true" style={{ color: '#1db954', fontSize: '2.5rem' }} />
@@ -7,13 +7,14 @@ const SpotifyIcon = () => (
 
 const Footer = () => {
   return (
-    <Paper elevation={3} style={{ padding: '20px', backgroundColor: '#333', }}>
-      <Container maxWidth="md">
-        <Typography variant="body2" align="center" style={{ color: 'white', marginTop: '0px' }}>
+    <div style={{ padding: '20px', backgroundColor: 'transparent' }}>
+      <Container>
+        <p className="text-white text-center mb-0">
           © 2023 Disco Stranger Music. All rights reserved.
-        </Typography>
+          <SpotifyIcon className="ml-2" />
+        </p>
       </Container>
-    </Paper>
+    </div>
   );
 };
 

@@ -22,13 +22,14 @@ const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   color: "#fff",
   textAlign: "center",
   padding: "20%",
-  // background: `radial-gradient(circle, #2196F3, #E91E63)`,
-  background:'black',
+  marginTop:'-5%',
+  background: `linear-gradient(to bottom, rgba(255, 105, 180, ${mouseY / window.innerHeight}), rgba(138, 43, 226, ${1 - mouseY / window.innerHeight}))`,
   filter: isHovered ? "blur(0px)" : "blur(0)",
   "@media (max-width: 768px)": {
     height: "75vh",
   },
 }));
+
 
 
 const ImageContainer = styled("div")({
@@ -150,7 +151,7 @@ const Home = () => {
         mouseX={mousePos.x}
         mouseY={mousePos.y}
       >
-        <Blob />
+        
         <div className="custom-font">
           <h3>DISCO STRANGER</h3>
         </div>
@@ -276,6 +277,7 @@ const Home = () => {
           }}
           sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
           src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
+          loading="lazy"
         ></iframe>
       </div>
       </Paper>

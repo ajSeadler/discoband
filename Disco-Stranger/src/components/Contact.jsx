@@ -4,7 +4,7 @@ import { Container, Paper, Typography, Link, Grid } from '@mui/material';
 
 const Contact = () => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column',background: `radial-gradient(circle, #2196F3, #E91E63)`, minHeight: '85.1vh' }}>
+    <div className='cont-pg' style={{ display: 'flex', flexDirection: 'column',background: `radial-gradient(circle, #2196F3, #E91E63)`, minHeight: '85.1vh' }}>
       <Container maxWidth="md">
         <Paper elevation={3} style={{ padding: '30px', marginTop: '40%', borderRadius: '15px' }}>
           <Typography variant="h5" gutterBottom style={{fontFamily: 'Gasoek One'}}>
