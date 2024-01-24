@@ -83,11 +83,11 @@ const NavBar = () => {
                 position: "absolute",
                 top: "80%",
                 marginTop: "25px",
-                fontFamily:'Gasoek One'
+                fontFamily:'Gasoek One',
               }}
               PaperProps={{
                 style: {
-                  backgroundColor: "#C6D2ED",
+                  backgroundColor: "#f5f5f5",
                 
                   
                 },
@@ -100,9 +100,9 @@ const NavBar = () => {
           <>
             {/* Logo image */}
             <img
-              src="/pics/discologo.PNG"
+              src="/pics/whitelogo.PNG"
               alt="Your Band Logo"
-              style={{ height: "40px", marginRight: "auto" }}
+              style={{ height: "50px", marginRight: "auto" }}
             />
             {/* Navigation buttons */}
             <div>

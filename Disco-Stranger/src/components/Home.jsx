@@ -11,6 +11,7 @@ import {
   DialogContent,
 } from "@mui/material";
 import { styled } from "@mui/system";
+import Blob from "./Blob";
 
 const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   position: "relative",
@@ -21,7 +22,8 @@ const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   color: "#fff",
   textAlign: "center",
   padding: "20%",
-  background: `radial-gradient(circle at ${mouseX}px ${mouseY}px, #2196F3, #E91E63)`,
+  // background: `radial-gradient(circle, #2196F3, #E91E63)`,
+  background:'black',
   filter: isHovered ? "blur(0px)" : "blur(0)",
   "@media (max-width: 768px)": {
     height: "75vh",
@@ -137,6 +139,7 @@ const Home = () => {
 
   return (
     <div className="home-pg">
+      
       {/* Hero Section */}
       <HeroSection
         elevation={3}
@@ -147,6 +150,7 @@ const Home = () => {
         mouseX={mousePos.x}
         mouseY={mousePos.y}
       >
+        <Blob />
         <div className="custom-font">
           <h3>DISCO STRANGER</h3>
         </div>
