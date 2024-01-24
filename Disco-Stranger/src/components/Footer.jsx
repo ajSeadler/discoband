@@ -7,7 +7,7 @@ const SpotifyIcon = () => (
 
 const Footer = () => {
   return (
-    <div style={{ padding: '20px', backgroundColor: 'transparent' }}>
+    <div style={{ padding: '20px', backgroundColor: '#333',}}>
       <Container>
         <p className="text-white text-center mb-0">
           © 2023 Disco Stranger Music. All rights reserved.
