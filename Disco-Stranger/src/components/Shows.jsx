@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Paper,
   Typography,
@@ -13,173 +13,171 @@ import {
   DialogActions,
   Button,
   IconButton,
-} from '@mui/material';
-import { styled } from '@mui/system';
-import CloseIcon from '@mui/icons-material/Close';
+} from "@mui/material";
+import { styled } from "@mui/system";
+import CloseIcon from "@mui/icons-material/Close";
 
 const ShowsPaper = styled(Paper)(({ theme }) => ({
-  padding: '50px',
-  marginTop: '-3%',
+  padding: "50px",
+  marginTop: "-3%",
   background: `radial-gradient(circle, #1C6E8C, #2A7F62)`, // Light gray background
-  boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
-  
-  [theme.breakpoints.down('sm')]: {
-    marginTop: '-10%', // Adjust the margin for smaller screens
+  boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
+
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "-10%", // Adjust the margin for smaller screens
   },
 }));
 
 const ShowsContainer = styled(Grid)(({ theme }) => ({
-  marginTop: '10px',
-  display: 'flex',
-  justifyContent: 'flex-start',
+  marginTop: "10px",
+  display: "flex",
+  justifyContent: "flex-start",
 }));
 
 const ShowCard = styled(Card)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  backgroundColor:'#89909F',
-  color:'white',
-  maxHeight:'100%',
-  height: '100%', // Set a fixed height for the card
-  overflow: 'hidden',
-  cursor: 'pointer',
-  transition: 'transform 0.2s ease-in-out',
-  '&:hover': {
-    transform: 'scale(1.05)',
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "#89909F",
+  color: "white",
+  maxHeight: "100%",
+  height: "100%", // Set a fixed height for the card
+  overflow: "hidden",
+  cursor: "pointer",
+  transition: "transform 0.2s ease-in-out",
+  "&:hover": {
+    transform: "scale(1.05)",
   },
   // clipPath: 'polygon(0 30%, 100% 0, 100% 100%, 0 100%)',
 }));
 
 const ShowCardContent = styled(CardContent)(({ theme }) => ({
   flexGrow: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
 }));
 
-const ShowImage = styled('img')(({ theme }) => ({
-  width: '100%',
-  height: '100%',
-  maxHeight: '100%', // Ensure the image doesn't exceed the dialog height
-  borderRadius: '0px',
-  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
-  objectFit: 'contain',
- // Keep the aspect ratio without cropping
+const ShowImage = styled("img")(({ theme }) => ({
+  width: "100%",
+  height: "100%",
+  maxHeight: "100%", // Ensure the image doesn't exceed the dialog height
+  borderRadius: "0px",
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  objectFit: "contain",
+  // Keep the aspect ratio without cropping
 }));
 
 const FullImageDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialog-paper': {
+  "& .MuiDialog-paper": {
     // maxWidth: '50%', // Adjust the maximum width as needed
     // width: '80%',
     // maxHeight: '50%',
     // height: '80%',
-    overflow: 'hidden',
+    overflow: "hidden",
   },
 }));
 
-
 const FullImageDialogContent = styled(DialogContent)(({ theme }) => ({
   padding: 0,
-  position: 'relative',
+  position: "relative",
 }));
 
 const CloseButton = styled(IconButton)(({ theme }) => ({
-  position: 'absolute',
+  position: "absolute",
   top: theme.spacing(1),
   right: theme.spacing(1),
 }));
 
-
-
 const shows = [
   {
-    title: 'CHECK BACK SOON!',
-    // date: 'December 2nd, 2023',
-    // time: '8:00 - 12:00 PM',
-    // price: '$5.00 ENTRY',
-    image: '/pics/drewncolton.JPG',
+    title: "The Opolis",
+    date: 'February 1st, 2024',
+    time: '8:00 - 12:00 PM',
+    price: '$8.00 21 & up. $11 under 21.',
+    image: "/pics/2-1-24.jpg",
   },
   // Add more upcoming shows if needed
 ];
 
 const pastShows = [
   {
-    title: '51 St. Speakeasy',
-    date: 'December 2nd, 2023',
-    time: '8:00 - 12:00 PM',
-    price: '$5.00 ENTRY',
-    image: '/pics/dec2up.png',
+    title: "51 St. Speakeasy",
+    date: "December 2nd, 2023",
+    time: "8:00 - 12:00 PM",
+    price: "$5.00 ENTRY",
+    image: "/pics/dec2up.png",
   },
   {
-    title: 'Live Room Fridays @ ACM',
-    date: 'September 15, 2023',
-    time: '7:00 - 10:00 PM',
-    price: '$10.00 ENTRY - FREE w/ UCO ID',
-    image: 'pics/DISCO STRANGER1.jpg',
+    title: "Live Room Fridays @ ACM",
+    date: "September 15, 2023",
+    time: "7:00 - 10:00 PM",
+    price: "$10.00 ENTRY - FREE w/ UCO ID",
+    image: "pics/DISCO STRANGER1.jpg",
   },
   {
-    title: 'Carnival Gods Tour w/ FOX ROYALE',
-    date: '11-8-22',
-    time: '7:30 PM',
-    price: '$15.00',
-    image: 'pics/11-8-22.jpg',
+    title: "Carnival Gods Tour w/ FOX ROYALE",
+    date: "11-8-22",
+    time: "7:30 PM",
+    price: "$15.00",
+    image: "pics/11-8-22.jpg",
   },
   {
-    title: 'Mosaic Mingle',
-    date: '12-10-22',
-    time: '2:00 - 4:00 PM',
-    price: 'FREE',
-    image: 'pics/10-10-22.jpg',
+    title: "Mosaic Mingle",
+    date: "12-10-22",
+    time: "2:00 - 4:00 PM",
+    price: "FREE",
+    image: "pics/10-10-22.jpg",
   },
   {
-    title: '51st Street Speakeasy (EP RELEASE SHOW)',
-    date: '9-30-22',
-    time: '9:00PM',
-    price: '$5.00',
-    image: 'pics/9-30-22.jpg',
+    title: "51st Street Speakeasy (EP RELEASE SHOW)",
+    date: "9-30-22",
+    time: "9:00PM",
+    price: "$5.00",
+    image: "pics/9-30-22.jpg",
   },
   {
-    title: '51st Street Speakeasy',
-    date: '8-5-22',
-    time: '9:00PM',
-    price: '$5.00',
-    image: 'pics/8-5-22.jpg',
+    title: "51st Street Speakeasy",
+    date: "8-5-22",
+    time: "9:00PM",
+    price: "$5.00",
+    image: "pics/8-5-22.jpg",
   },
   {
-    title: 'Beer City Music Hall',
-    date: '6-11-22',
-    time: '8PM',
-    price: '$10.00',
-    image: 'pics/6-11-22.jpg',
+    title: "Beer City Music Hall",
+    date: "6-11-22",
+    time: "8PM",
+    price: "$10.00",
+    image: "pics/6-11-22.jpg",
   },
   {
-    title: '51st Street Speakeasy',
-    date: '3-25-22',
-    time: '9:00PM',
-    price: '$5.00',
-    image: 'pics/3-25-22.jpg',
+    title: "51st Street Speakeasy",
+    date: "3-25-22",
+    time: "9:00PM",
+    price: "$5.00",
+    image: "pics/3-25-22.jpg",
   },
   {
-    title: 'VZD\'s',
-    date: '12-10-21',
-    time: '9:00PM',
-    price: 'FREE',
-    image: 'pics/12-10-21.jpg',
+    title: "VZD's",
+    date: "12-10-21",
+    time: "9:00PM",
+    price: "FREE",
+    image: "pics/12-10-21.jpg",
   },
   {
-    title: '51st Speakeasy',
-    date: '11-6-21',
-    time: '9:00PM',
-    price: '$5.00',
-    image: 'pics/11-6-21.jpg',
+    title: "51st Speakeasy",
+    date: "11-6-21",
+    time: "9:00PM",
+    price: "$5.00",
+    image: "pics/11-6-21.jpg",
   },
   {
-    title: '51st Street Speakeasy',
-    date: '9-3-21',
-    time: '9:00PM',
-    price: '$5.00',
-    image: 'pics/9-3-21.jpg',
+    title: "51st Street Speakeasy",
+    date: "9-3-21",
+    time: "9:00PM",
+    price: "$5.00",
+    image: "pics/9-3-21.jpg",
   },
+
   // Add more past shows if needed
 ];
 
@@ -205,40 +203,50 @@ const Shows = () => {
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
-    const pastShowsAnchor = document.getElementById('pastShows');
+    const pastShowsAnchor = document.getElementById("pastShows");
     if (pastShowsAnchor) {
       const topOffset = pastShowsAnchor.offsetTop;
       window.scrollTo({
         top: topOffset,
-        behavior: 'smooth', // Optional: Use smooth scrolling
+        behavior: "smooth", // Optional: Use smooth scrolling
       });
     }
   };
 
   return (
-    <div className='shows-pg'>
+    <div className="shows-pg">
       <ShowsPaper elevation={3}>
-        <div className="custom-font-shows"><h1>UPCOMING SHOWS</h1>
-        <h3 style={{fontFamily:'sans-serif'}}>There are currently no upcoming shows.</h3></div>
+        <div className="custom-font-shows" >
+          <h1>UPCOMING SHOWS</h1>
+
+          {/* <h3 style={{ fontFamily: "sans-serif" }}>
+            There are currently no upcoming shows.
+          </h3> */}
+        </div>
         {/* this is the current show container - commented out when no shows. */}
-        {/* <ShowsContainer container spacing={4}>
+        <ShowsContainer container spacing={4} style={{marginBottom:'3%'}}>
           {shows.map((show, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
               <ShowCard onClick={() => handleCardClick(show)}>
                 <ShowImage src={show.image} alt={`Band Picture ${index}`} />
                 <ShowCardContent>
                   <Typography variant="h6">{show.title}</Typography>
+                  <Typography>Date: {show.date}</Typography>
+                  <Typography>Time: {show.time}</Typography>
+                  <Typography>Price: {show.price}</Typography>
                 </ShowCardContent>
               </ShowCard>
             </Grid>
           ))}
-        </ShowsContainer> */}
-  
-        <div className="custom-font-shows"><h1>PAST SHOWS</h1></div>
-  
+        </ShowsContainer>
+
+        <div className="custom-font-shows">
+          <h1>PAST SHOWS</h1>
+        </div>
+
         {/* Anchor point for top of past shows section */}
         <div id="pastShows" />
-  
+
         <ShowsContainer container spacing={4}>
           {currentShows.map((show, index) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
@@ -254,17 +262,23 @@ const Shows = () => {
             </Grid>
           ))}
         </ShowsContainer>
-  
+
         {/* Pagination */}
-        <Grid container justifyContent="center" style={{ marginTop: '20px', }}>
-          {[...Array(Math.ceil(pastShows.length / showsPerPage)).keys()].map((pageNumber) => (
-            <Button key={pageNumber + 1} onClick={() => paginate(pageNumber + 1)} style={{color:'rgb(237, 102, 87)'}}>
-              {pageNumber + 1}
-            </Button>
-          ))}
+        <Grid container justifyContent="center" style={{ marginTop: "20px" }}>
+          {[...Array(Math.ceil(pastShows.length / showsPerPage)).keys()].map(
+            (pageNumber) => (
+              <Button
+                key={pageNumber + 1}
+                onClick={() => paginate(pageNumber + 1)}
+                style={{ color: "rgb(237, 102, 87)" }}
+              >
+                {pageNumber + 1}
+              </Button>
+            )
+          )}
         </Grid>
       </ShowsPaper>
-  
+
       <FullImageDialog open={open} onClose={handleClose}>
         <FullImageDialogContent>
           <CloseButton aria-label="close" onClick={handleClose}>
@@ -275,7 +289,6 @@ const Shows = () => {
       </FullImageDialog>
     </div>
   );
-  
-          };  
+};
 
 export default Shows;

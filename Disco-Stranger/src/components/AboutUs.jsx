@@ -3,7 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AboutUs = () => {
-  const images = ['./pics/greenblue.jpg', './pics/bluePink.jpg']; // Add more image paths if needed
+  const images = ['./pics/greenblue.jpg', './pics/bluePink.jpg', './pics/discocrit.jpg', './pics/vanguard1.jpg','./pics/deepellum.jpeg', './pics/drewdeepE.jpg', './pics/coltondeepE.jpg', './pics/ajdeepE.jpg']; // Add more image paths if needed
 
   return (
     <div className='about-pg'>
@@ -22,11 +22,11 @@ const AboutUs = () => {
                 alt="Band Image"
                 className="img-fluid rounded mb-4"
               />
-              <p className="mb-4">
+              {/* <p className="mb-4">
                 After years of band attempts and projects dating back to high school days, a career in music for the members
                 of Disco Stranger didn’t look so promising. After a few long months and a little bit of luck, the origin of
                 the group was born.
-              </p>
+              </p> */}
               <p className="mb-4">
                 Disco Stranger originally started out as a cover band under the name "Steve French and Company" until they
                 heard one too many “PLAY KID ROCK!” requests and decided to write their own original material. The band name
@@ -37,20 +37,20 @@ const AboutUs = () => {
               </h6>
               <ul>
                 <li className="mb-2">
-                  <strong>Drew Stogsdill:</strong> Lead Vocals and Rhythm Guitar
+                  <i className="fas fa-microphone-alt"></i> <strong>Drew Stogsdill:</strong> Lead Vocals and Rhythm Guitar
                 </li>
                 <li className="mb-2">
-                  <strong>AJ Seadler:</strong> Lead Guitar
+                  <i className="fa-solid fa-guitar"></i> <strong>AJ Seadler:</strong> Lead Guitar
                 </li>
                 <li className="mb-2">
-                  <strong>Colton Walkup:</strong> Bass
+                  <i className="fas fa-bass-guitar"></i> <strong>Colton Walkup:</strong> Bass
                 </li>
                 <li className="mb-2">
-                  <strong>Nathaniel Lee:</strong> Drums
+                  <i className="fas fa-drum-set"></i> <strong>Nathaniel Lee:</strong> Drums
                 </li>
               </ul>
               <p>
-                Together, they are more than a band; they are the architects of an auditory journey. Get ready to experience the magic of Disco Stranger.
+                Together, they are more than a band; they are the architects of an auditory journey. Listen to Disco Stranger today!
               </p>
             </div>
           </div>

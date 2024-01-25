@@ -29,7 +29,7 @@ const Contact = () => {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.instagram.com/discostranger/?hl=en" target="_blank" rel="noopener noreferrer">
                 <img src="pics/instagram.svg" alt="Instagram" style={{ height: '40px', borderRadius: '10px' }} />
               </Link>
             </Grid>
