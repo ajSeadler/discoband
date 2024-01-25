@@ -16,7 +16,7 @@ const AboutUs = () => {
         
           <div className="row">
             <div className="col-md-6 mx-auto">
-              <h4 className="mb-4">ABOUT US</h4>
+              <h4 className="mb-4" style={{fontFamily:'YourCustomFont'}}>ABOUT US</h4>
               <img
                 src="/pics/IMG_2050.JPG"
                 alt="Band Image"

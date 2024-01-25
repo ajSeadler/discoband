@@ -1,18 +1,41 @@
 import React from 'react';
 import { Container, Paper, Typography, Link, Grid } from '@mui/material';
+import { FaSpotify, FaApple, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';;
+import ContactUs from './ContactUs'
+import styled from 'styled-components';
 
+
+const SocialIcons = styled.div`
+  display: flex;
+  color: #333;
+  justify-content: center;
+  gap: 15px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
+
+  a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #1db954;
+    }
+  }
+`;
 
 const Contact = () => {
   return (
-    <div className='cont-pg' style={{ display: 'flex', flexDirection: 'column',background: `radial-gradient(circle, #2196F3, #E91E63)`, minHeight: '85.1vh' }}>
+    <div className='cont-pg' style={{ display: 'flex', flexDirection: 'column',background: `radial-gradient(circle, #1C6E8C, #2A7F62)`, minHeight: '85.1vh' }}>
       <Container maxWidth="md">
-        <Paper elevation={3} style={{ padding: '30px', marginTop: '40%', borderRadius: '15px' }}>
+        <Paper elevation={3} style={{ padding: '30px', marginTop: '15%', borderRadius: '15px' }}>
           <Typography variant="h5" gutterBottom style={{fontFamily: 'Gasoek One'}}>
             CONTACT
           </Typography>
           
           <Typography variant="body1" paragraph style={{fontFamily:'Bebas Neue'}}>
-            Want to book us? Reach out!
+            Want to book us? Reach out and send an email below!
           </Typography>
           <Typography variant="h6" style={{ marginTop: '0px', display: 'flex', alignItems: 'center', marginBottom:'2%' }}>
             <img src="pics/email.png" alt="Email" style={{ height: '30px', marginRight: '5px', borderRadius: '5px' }} />
@@ -22,29 +45,26 @@ const Contact = () => {
           </Typography>
 
           {/* Social Links */}
-          <Grid container spacing={2} alignItems="center">
-            <Grid item>
-              <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <img src="pics/facebook.svg" alt="Facebook" style={{ height: '40px', borderRadius: '10px' }} />
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="https://www.instagram.com/discostranger/?hl=en" target="_blank" rel="noopener noreferrer">
-                <img src="pics/instagram.svg" alt="Instagram" style={{ height: '40px', borderRadius: '10px' }} />
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                <img src="pics/youtube.svg" alt="YouTube" style={{ height: '40px', borderRadius: '10px' }} />
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="https://www.spotify.com" target="_blank" rel="noopener noreferrer">
-                <img src="pics/spotify.svg" alt="Spotify" style={{ height: '40px', borderRadius: '10px' }} />
-              </Link>
-            </Grid>
-          </Grid>
+          <SocialIcons>
+              <a href="https://open.spotify.com/artist/3SwSE7OtWzLOrc32Eq54gO" target="_blank" rel="noopener noreferrer">
+                <FaSpotify className="icon" size={30} style={{color:'#333'}}/>
+              </a>
+              <a href="https://music.apple.com/us/artist/disco-stranger/1529203061" target="_blank" rel="noopener noreferrer">
+                <FaApple className="icon" size={30} style={{color:'#333'}}/>
+              </a>
+              <a href="https://www.youtube.com/@discostranger7103" target="_blank" rel="noopener noreferrer">
+                <FaYoutube className="icon" size={30} style={{color:'#333'}}/>
+              </a>
+              <a href="https://www.instagram.com/discostranger/?hl=en" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="icon" size={30} style={{color:'#333'}}/>
+              </a>
+              <a href="https://www.facebook.com/discostrangerband/" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="icon" size={30} style={{color:'#333'}}/>
+              </a>
+            </SocialIcons>
         </Paper>
+
+        <ContactUs />
         
       </Container> 
       

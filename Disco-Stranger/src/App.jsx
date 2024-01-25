@@ -1,6 +1,6 @@
 // App.jsx
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Home from './components/Home'; 
 import AboutUs from './components/AboutUs';
@@ -8,11 +8,15 @@ import Shows from './components/Shows';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Blob from './components/Blob';
+import ScrollToTop from './components/ScrollToTop'; // Import the ScrollToTop component
 
 function App() {
   return (
     <div>
       <NavBar />
+
+      {/* Include the ScrollToTop component here */}
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />

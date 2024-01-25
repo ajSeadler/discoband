@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import Blob from "./Blob";
+import ContactUs from "./ContactUs";
 
 const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   position: "relative",
@@ -280,6 +281,7 @@ const Home = () => {
           loading="lazy"
         ></iframe>
       </div>
+      <ContactUs />
       </Paper>
       {/* Parent div for iframes */}
       

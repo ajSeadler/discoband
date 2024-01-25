@@ -10,6 +10,7 @@ body {
   padding: 0px;
   box-sizing: border-box;
   background-color: #32936F;
+  
 }
 
 .home-pg {
@@ -27,6 +28,10 @@ body {
   src: url('/public/GasoekOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+h1 {
+  font-family: YourCustomFont;
 }
 
 /* Apply the font to an element */
@@ -164,8 +169,9 @@ body {
 }
 
 .bio {
-  background-color: #5CA4A9;
+  background: linear-gradient(to bottom, #1C6E8C, #2A7F62 );
 }
+
 
 .custom-shape-divider-bottom-1706069005 {
   position: relative;
@@ -182,7 +188,7 @@ body {
 }
 
 .custom-shape-divider-bottom-1706069005 .shape-fill {
-  fill: #5CA4A9;
+  fill: #2A7F62
 }
 
 .shape-fill {

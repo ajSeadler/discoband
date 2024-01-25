@@ -1,20 +1,86 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FaSpotify, FaApple, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa';
+import styled from 'styled-components';
 
-const SpotifyIcon = () => (
-  <i className="fa fa-spotify" aria-hidden="true" style={{ color: '#1db954', fontSize: '2.5rem' }} />
-);
+const StyledFooter = styled.div`
+  padding: 20px;
+  background-color: #333;
+  color: white;
+`;
+
+const FooterContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+
+const CopyrightText = styled.p`
+  margin-bottom: 10px;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: center;
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
+
+  a {
+    color: white;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #1db954;
+    }
+  }
+`;
 
 const Footer = () => {
   return (
-    <div style={{ padding: '20px', backgroundColor: '#333',}}>
+    <StyledFooter>
       <Container>
-        <p className="text-white text-center mb-0">
-          © 2023 Disco Stranger Music. All rights reserved.
-          <SpotifyIcon className="ml-2" />
-        </p>
+        <FooterContent>
+          
+          <Col xs="12" md="6" className="text-center">
+            <SocialIcons>
+              <a href="https://open.spotify.com/artist/3SwSE7OtWzLOrc32Eq54gO" target="_blank" rel="noopener noreferrer">
+                <FaSpotify className="icon" size={30} />
+              </a>
+              <a href="https://music.apple.com/us/artist/disco-stranger/1529203061" target="_blank" rel="noopener noreferrer">
+                <FaApple className="icon" size={30} />
+              </a>
+              <a href="https://www.youtube.com/@discostranger7103" target="_blank" rel="noopener noreferrer">
+                <FaYoutube className="icon" size={30} />
+              </a>
+              <a href="https://www.instagram.com/discostranger/?hl=en" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="icon" size={30} />
+              </a>
+              <a href="https://www.facebook.com/discostrangerband/" target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="icon" size={30} />
+              </a>
+            </SocialIcons>
+          </Col>
+          <Col xs="12" md="6" className="text-center mb-2 mt-3 mb-md-0">
+            <CopyrightText>© 2023 Disco Stranger Music. All rights reserved.</CopyrightText>
+          </Col>
+        </FooterContent>
       </Container>
-    </div>
+    </StyledFooter>
   );
 };
 
