@@ -6,7 +6,7 @@ exports.handler = async function (event, context) {
   try {
     const { name, email } = JSON.parse(event.body);
 
-    // Configure Nodemailer with your email service credentials from environment variables
+    // Configure Nodemailer with band email service credentials from environment variables
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {

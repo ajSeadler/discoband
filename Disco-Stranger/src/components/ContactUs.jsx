@@ -6,9 +6,41 @@ import { Typography } from "@mui/material";
 const Contact = () => {
   const form = useRef();
   const [isSuccess, setIsSuccess] = useState(false);
+  const [validationErrors, setValidationErrors] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // Check for empty fields
+    const name = form.current.from_name.value.trim();
+    const email = form.current.user_email.value.trim();
+    const message = form.current.message.value.trim();
+
+    if (!name) {
+      setValidationErrors((prevErrors) => ({ ...prevErrors, name: "Name is required" }));
+      return;
+    }
+
+    if (!email) {
+      setValidationErrors((prevErrors) => ({ ...prevErrors, email: "Email is required" }));
+      return;
+    }
+
+    if (!message) {
+      setValidationErrors((prevErrors) => ({ ...prevErrors, message: "Message is required" }));
+      return;
+    }
+
+    // Clear validation errors
+    setValidationErrors({
+      name: "",
+      email: "",
+      message: "",
+    });
 
     emailjs
       .sendForm(
@@ -37,10 +69,13 @@ const Contact = () => {
       <form ref={form} onSubmit={sendEmail}>
         <label>Name</label>
         <input type="text" name="from_name" />
+        {validationErrors.name && <ErrorMessage>{validationErrors.name}</ErrorMessage>}
         <label>Email</label>
         <input type="email" name="user_email" />
+        {validationErrors.email && <ErrorMessage>{validationErrors.email}</ErrorMessage>}
         <label>Message</label>
         <textarea name="message" />
+        {validationErrors.message && <ErrorMessage>{validationErrors.message}</ErrorMessage>}
         <input type="submit" value="Send" />
       </form>
       {isSuccess && <SuccessMessage>Message sent successfully!</SuccessMessage>}
@@ -48,14 +83,12 @@ const Contact = () => {
   );
 };
 
-export default Contact;
-
 // Styles
 const StyledContactForm = styled.div`
   width: 90%;
   max-width: 400px;
   color: white;
-  margin: 0 auto; /* Center the component */
+  margin: 0 auto; 
   text-align: center;
   margin-bottom: 5%;
 
@@ -112,3 +145,9 @@ const SuccessMessage = styled.div`
   margin-top: 1rem;
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  margin-top: 0.5rem;
+`;
+
+export default Contact;

@@ -202,21 +202,22 @@ const Home = () => {
         >
           Watch Our Latest Videos
         </Typography>
-        <div className="video-home">
+        <div className="video-home" style={{border:'none', boxShadow:'none', }}>
           {/* First Video */}
 
-          <Card className="video-card">
+          <Card className="video-card" sx={{ boxShadow: 'none', border: 'none', }}>
             <CardMedia
               component="iframe"
               height="200"
               src="https://www.youtube.com/embed/Imyu7VLuy98"
               title="First Video"
+              sx={{ boxShadow: 'none', border: 'none' }}
             />
             <CardContent style={{ backgroundColor: "#2A7F62" }}>
               <Typography
                 variant="body1"
                 color="white"
-                style={{ boxShadow: "none", border: "none" }}
+                style={{ fontFamily:'YourCustomFont'}}
               >
                 Disco Stranger - LIVE @ Speakeasy / Special Jam
               </Typography>
@@ -224,7 +225,7 @@ const Home = () => {
           </Card>
 
           {/* Second Video */}
-          <Card className="video-card">
+          <Card className="video-card" sx={{ boxShadow: 'none', border: 'none' }}>
             <CardMedia
               component="iframe"
               height="200"
@@ -235,7 +236,7 @@ const Home = () => {
               <Typography
                 variant="body1"
                 color="white"
-                style={{ backgroundColor: "transparent" }}
+                style={{ fontFamily:'YourCustomFont'}}
               >
                 Disco Stranger - The Less I Think (Lyric video)
               </Typography>
@@ -243,7 +244,7 @@ const Home = () => {
           </Card>
 
           {/* Third Video */}
-          <Card className="video-card">
+          <Card className="video-card" sx={{ boxShadow: 'none', border: 'none' }}>
             <CardMedia
               component="iframe"
               height="200"
@@ -254,7 +255,7 @@ const Home = () => {
               <Typography
                 variant="body1"
                 color="white"
-                style={{ backgroundColor: "transparent" }}
+                style={{ fontFamily:'YourCustomFont'}}
               >
                 Disco Stranger - Evil, In a Sense (Music Video)
               </Typography>

@@ -76,7 +76,8 @@ const Footer = () => {
             </SocialIcons>
           </Col>
           <Col xs="12" md="6" className="text-center mb-2 mt-3 mb-md-0">
-            <CopyrightText>© 2023 Disco Stranger Music. All rights reserved.</CopyrightText>
+            <CopyrightText>© 2024 Disco Stranger Music. All rights reserved.</CopyrightText>
+            <p style={{fontSize:'.8rem'}}>Built and designed by AJ Seadler</p>
           </Col>
         </FooterContent>
       </Container>
