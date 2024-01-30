@@ -92,7 +92,7 @@ const StyledContactForm = styled.div`
     input[type="submit"] {
       margin-top: 2rem;
       cursor: pointer;
-      background: #2A7F62;
+      background: #70877F;
       color: black;
       border: none;
     }

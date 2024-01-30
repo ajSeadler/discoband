@@ -1,40 +1,63 @@
-// AboutUs.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { ClipLoader } from 'react-spinners';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AboutUs = () => {
-  const images = ['./pics/greenblue.jpg', './pics/bluePink.jpg', './pics/discocrit.jpg', './pics/vanguard1.jpg', './pics/drew3.JPG', './pics/drewnajbcdark.JPEG', './pics/colgreenbc.JPEG', './pics/drewnajclosebc.JPEG', './pics/deepellum.jpeg', './pics/drewdeepE.jpg', './pics/coltondeepE.jpg', './pics/ajdeepE.jpg',  './pics/drew2bc.JPEG',  ]; 
+  const images = [
+    './pics/greenblue.jpg',
+    './pics/bluePink.jpg',
+    './pics/discocrit.jpg',
+    './pics/vanguard1.jpg',
+    './pics/drew3.JPG',
+    './pics/drewnajbcdark.JPEG',
+    './pics/colgreenbc.JPEG',
+    './pics/drewnajclosebc.JPEG',
+    './pics/deepellum.jpeg',
+    './pics/drewdeepE.jpg',
+    './pics/coltondeepE.jpg',
+    './pics/ajdeepE.jpg',
+    './pics/drew2bc.JPEG',
+  ];
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Create an array of promises for each image's onLoad event
+    const promises = images.map((image) => {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.src = image;
+        img.onload = resolve;
+      });
+    });
+
+    // Use Promise.all to wait for all promises to resolve
+    Promise.all(promises).then(() => {
+      setLoading(false); // All images have loaded, update the loading state
+    });
+  }, [images]); // Dependency array ensures this runs whenever images change
 
   return (
     <div className='about-pg'>
-      
-      
       <div className="bio text-white p-5">
-        
-        {/* Bio Section */}
         <div className="container mx-auto">
-        
           <div className="row">
-            <div className="col-md-6 mx-auto" style={{fontFamily:'YourCustomFont'}}>
-              <h4 className="mb-4" style={{fontFamily:'YourCustomFont'}}>ABOUT US</h4>
+            <div className="col-md-6 mx-auto" style={{ fontFamily: 'YourCustomFont' }}>
+              <h4 className="mb-4" style={{ fontFamily: 'YourCustomFont' }}>
+                ABOUT US
+              </h4>
               <img
                 src="/pics/IMG_2050.JPG"
                 alt="Band Image"
                 className="img-fluid rounded mb-4"
               />
-              {/* <p className="mb-4">
-                After years of band attempts and projects dating back to high school days, a career in music for the members
-                of Disco Stranger didn’t look so promising. After a few long months and a little bit of luck, the origin of
-                the group was born.
-              </p> */}
               <p className="mb-4">
-                Disco Stranger originally started out as a cover band under the name "Steve French and Company" until they
-                heard one too many “PLAY KID ROCK!” requests and decided to write their own original material. The band name
-                is an ode to the Eagles and their song “Disco Strangler”, a band they covered quite a bit and grew up on. 
+                Disco Stranger originally started out as a cover band under the name "Steve French
+                and Company" until they heard one too many “PLAY KID ROCK!” requests and decided to
+                write their own original material. The band name is an ode to the Eagles and their
+                song “Disco Strangler”, a band they covered quite a bit and grew up on.
               </p>
-              <h6 className="mb-4">
-                Meet the incredible talents that form the heart and soul of Disco Stranger:
-              </h6>
+              <h6 className="mb-4">Meet the incredible talents that form the heart and soul of Disco Stranger:</h6>
               <ul>
                 <li className="mb-2">
                   <i className="fas fa-microphone-alt"></i> <strong>Drew Stogsdill:</strong> Lead Vocals and Rhythm Guitar
@@ -49,13 +72,19 @@ const AboutUs = () => {
                   <i className="fas fa-drum-set"></i> <strong>Nathaniel Lee:</strong> Drums
                 </li>
               </ul>
-              <p>
-                Together, they are more than a band; they are the architects of an auditory journey. Listen to Disco Stranger today!
-              </p>
+              <p>Together, they are more than a band; they are the architects of an auditory journey. Listen to Disco Stranger today!</p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Spinner for the image above the bio */}
+      {loading && (
+        <div className="col-md-12 text-center">
+          <p>Loading...</p>
+          <ClipLoader color="#36D7B7" size={50} />
+        </div>
+      )}
 
       {/* SVG Wave Divider */}
       <div class="custom-shape-divider-bottom-1706069005">
@@ -69,15 +98,22 @@ const AboutUs = () => {
       <div className="bg-transparent p-5">
         <div className="container">
           <div className="row justify-content-center">
-            {images.map((image, index) => (
-              <div key={index} className="col-md-4 mb-4">
-                <img
-                  src={image}
-                  alt={`Image ${index}`}
-                  className="img-fluid rounded"
-                />
+            {loading && (
+              <div className="col-md-12 text-center">
+                <p>Loading...</p>
+                <ClipLoader color="#36D7B7" size={50} /> 
               </div>
-            ))}
+            )}
+            {!loading &&
+              images.map((image, index) => (
+                <div key={index} className="col-md-4 mb-4">
+                  <img
+                    src={image}
+                    alt={`Image ${index}`}
+                    className="img-fluid rounded"
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </div>
