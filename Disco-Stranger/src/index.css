@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 
@@ -14,27 +15,27 @@ body {
 }
 
 .home-pg {
-  background: radial-gradient(circle, #1C6E8C, #2A7F62);
+  background: radial-gradient(circle, #2A7F62, #001220);
   margin-top: 0px;
 }
 
 .shows-pg {
-  background: radial-gradient(circle, #1C6E8C, #2A7F62)
+  background: radial-gradient(circle, #2A7F62, #001220);
 }
-/* styles.css */
+
 
 @font-face {
-  font-family: 'YourCustomFont'; /* Choose a name for your font */
+  font-family: 'YourCustomFont'; 
   src: url('/public/GasoekOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 h1 {
-  font-family: YourCustomFont;
+  font-family: 'YourCustomFont';
 }
 
-/* Apply the font to an element */
+
 .custom-font {
   margin-bottom: 10px;
   display: block;
@@ -56,8 +57,7 @@ h1 {
 
 
 
-/* HomePage.css */
-/* HomePage.css */
+
 .hero-section {
   background-size: cover;
   background-position: center top;
@@ -70,13 +70,15 @@ h1 {
   text-align: center;
   font-size: 0.8rem;
   padding: 20px;
-  background-image: url(/public/pics/bluePink.jpg);  /* Default image */
+  background-image: url(/public/pics/bluePink.jpg);  
 }
 
 .video-card {
   margin-bottom: 0px;
+  background: transparent;
   width: 30%;
   border: none;
+  box-shadow: none;
 }
 
 .hero-section button {
@@ -87,6 +89,7 @@ h1 {
 .video-home {
   display: flex;
   justify-content: space-around;
+  box-shadow: none;
   /* background: radial-gradient(circle, #1C6E8C, #2A7F62); */
 }
 
@@ -94,7 +97,7 @@ h1 {
   max-width: 20vh;
 }
 
-/* Add this to your existing styles or create a new CSS file */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -106,7 +109,7 @@ h1 {
   }
 }
 
-/* styles.css */
+
 
 @keyframes moveGradient {
   0% {
@@ -119,7 +122,7 @@ h1 {
 
 
 .hero-text-fade-in {
-  animation: fadeIn 2s ease-out; /* Adjust the duration and easing as needed */
+  animation: fadeIn 2s ease-out; 
 }
 
 .images-container {
@@ -147,29 +150,12 @@ h1 {
   margin-top: -3%;
 }
 
-.blob-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vh;
-  height: 100vh;
-  z-index: -1;
-}
 
-.blob {
-  border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
-  background: linear-gradient(47deg, rgba(255, 88, 139, 1) 21%, rgb(0 164 173) 67%, rgba(118, 74, 166, 1) 81%);
-  width: 400px;
-  height: 400px;
-  box-shadow: inset 50px 50px 17px 0px #ff588b, inset 100px 100px 17px 0px #66319f;
-  opacity: 0.5;
-  filter: blur(40px); 
-  z-index: -1;
-  animation: animate 15s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite alternate forwards;
-}
+
+
 
 .bio {
-  background: linear-gradient(to bottom, #1C6E8C, #2A7F62 );
+  background: #2A7F62;
 }
 
 
@@ -193,6 +179,10 @@ h1 {
 
 .shape-fill {
   fill:#2A7F62
+}
+
+.video-section {
+  box-shadow: none;
 }
 
 
@@ -260,16 +250,18 @@ h1 {
 @media (max-width: 600px) {
   .hero-section {
     max-height: 100%;
+    border: none;
     height: 300px;
     margin-top: -20%;
     display: flex;
     flex-direction: column;
     background-size: contain;
-    background-image: url(/public/pics/bluePink.jpg);  /* Mobile image */
+    background-image: url(/public/pics/bluePink.jpg);  
   }
 
   .home-pg {
     margin-top: -20%;
+    border: none;
   }
 
   .about-pg {
@@ -280,20 +272,7 @@ h1 {
     margin-top: -12%;
   }
 
-  .hero-text {
-    font-size: 14px;
-    backdrop-filter: blur(1px); /* Add backdrop filter for background blur */
-    background-color: rgba(64, 64, 64, 0.148);
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-
-  .blob-container {
-    overflow: hidden;
-    height: 100vh;
-    width: auto;
-  }
+  
   
 
   .hero-text h4 {

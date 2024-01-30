@@ -3,7 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AboutUs = () => {
-  const images = ['./pics/greenblue.jpg', './pics/bluePink.jpg', './pics/discocrit.jpg', './pics/vanguard1.jpg','./pics/deepellum.jpeg', './pics/drewdeepE.jpg', './pics/coltondeepE.jpg', './pics/ajdeepE.jpg']; // Add more image paths if needed
+  const images = ['./pics/greenblue.jpg', './pics/bluePink.jpg', './pics/discocrit.jpg', './pics/vanguard1.jpg', './pics/drew3.JPG', './pics/drewnajbcdark.JPEG', './pics/colgreenbc.JPEG', './pics/drewnajclosebc.JPEG', './pics/deepellum.jpeg', './pics/drewdeepE.jpg', './pics/coltondeepE.jpg', './pics/ajdeepE.jpg',  './pics/drew2bc.JPEG',  ]; 
 
   return (
     <div className='about-pg'>
@@ -15,7 +15,7 @@ const AboutUs = () => {
         <div className="container mx-auto">
         
           <div className="row">
-            <div className="col-md-6 mx-auto">
+            <div className="col-md-6 mx-auto" style={{fontFamily:'YourCustomFont'}}>
               <h4 className="mb-4" style={{fontFamily:'YourCustomFont'}}>ABOUT US</h4>
               <img
                 src="/pics/IMG_2050.JPG"

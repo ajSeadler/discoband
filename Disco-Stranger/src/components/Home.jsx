@@ -11,10 +11,9 @@ import {
   DialogContent,
 } from "@mui/material";
 import { styled } from "@mui/system";
-import Blob from "./Blob";
 import ContactUs from "./ContactUs";
 
-const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
+const HeroSection = styled(Paper)({
   position: "relative",
   display: "flex",
   flexDirection: "column",
@@ -23,15 +22,16 @@ const HeroSection = styled(Paper)(({ isHovered, mouseX, mouseY }) => ({
   color: "#fff",
   textAlign: "center",
   padding: "20%",
-  marginTop:'-5%',
-  background: `linear-gradient(to bottom, rgba(255, 105, 180, ${mouseY / window.innerHeight}), rgba(138, 43, 226, ${1 - mouseY / window.innerHeight}))`,
-  filter: isHovered ? "blur(0px)" : "blur(0)",
+  boxShadow: "none",
+  marginTop: "-5%",
+  borderRadius: 0,
+  border: "none",
+  background: `url('grnblob.svg')`,
+  backgroundSize: "cover",
   "@media (max-width: 768px)": {
     height: "75vh",
   },
-}));
-
-
+});
 
 const ImageContainer = styled("div")({
   position: "absolute",
@@ -52,10 +52,10 @@ const Image = styled("img")({
   width: "20%",
   height: "20%",
   borderRadius: "50%",
-  transition: "transform 0.3s ease-in-out", // Added transition for smooth effect
+  transition: "transform 0.3s ease-in-out",
 
   "&:hover": {
-    transform: "scale(1.1)", // Increase scale on hover
+    transform: "scale(1.1)", // Increase img size on hover
   },
   "@media (max-width: 768px)": {
     width: "45%",
@@ -67,7 +67,7 @@ const ModalContainer = styled(DialogContent)({
   display: "flex",
   background: `radial-gradient(circle, #2196F3, #E91E63)`,
   flexDirection: "column",
-  alignItems: "center"
+  alignItems: "center",
 });
 
 const Modal = ({ isOpen, onClose, image, name, bio, inst }) => {
@@ -141,10 +141,9 @@ const Home = () => {
 
   return (
     <div className="home-pg">
-      
       {/* Hero Section */}
       <HeroSection
-        elevation={3}
+        elevation={1}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onMouseMove={handleMouseMove}
@@ -152,7 +151,6 @@ const Home = () => {
         mouseX={mousePos.x}
         mouseY={mousePos.y}
       >
-        
         <div className="custom-font">
           <h3>DISCO STRANGER</h3>
         </div>
@@ -169,7 +167,7 @@ const Home = () => {
         {/* <Typography variant="h4" style={{ marginTop: '150%', display: 'block', textAlign: 'center' }}>STRANGER</Typography> */}
 
         <div className="hero-text-fade-in">
-          {/* Additional code if needed */}
+          {/* idk if i'll use this section */}
         </div>
       </HeroSection>
 
@@ -183,28 +181,30 @@ const Home = () => {
         inst={inst[selectedImage]}
       />
 
-      
-
-      {/* Video Section */}
+      {/* This section follows the hero section */}
       <Paper
         className="video-section"
-        elevation={3}
+        elevation={1}
         style={{
           padding: "20px",
           marginTop: "0px",
-          background: `radial-gradient(circle, #1C6E8C, #2A7F62)`,
+          background: `url(/2.svg)`,
+          backgroundSize: "cover",
+          borderRadius: 0,
+          boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)",
+          border: "none",
         }}
       >
-       
-          <Typography
-            variant="h4"  
-            gutterBottom
-            style={{ color: "white", fontFamily: "Bebas Neue" }}
-          >
-            Watch Our Latest Videos
-          </Typography>
-          <div className="video-home">
+        <Typography
+          variant="h4"
+          gutterBottom
+          style={{ color: "white", fontFamily: "Bebas Neue" }}
+        >
+          Watch Our Latest Videos
+        </Typography>
+        <div className="video-home">
           {/* First Video */}
+
           <Card className="video-card">
             <CardMedia
               component="iframe"
@@ -212,8 +212,12 @@ const Home = () => {
               src="https://www.youtube.com/embed/Imyu7VLuy98"
               title="First Video"
             />
-            <CardContent>
-              <Typography variant="body1" color="text.secondary">
+            <CardContent style={{ backgroundColor: "#2A7F62" }}>
+              <Typography
+                variant="body1"
+                color="white"
+                style={{ boxShadow: "none", border: "none" }}
+              >
                 Disco Stranger - LIVE @ Speakeasy / Special Jam
               </Typography>
             </CardContent>
@@ -227,8 +231,12 @@ const Home = () => {
               src="https://www.youtube.com/embed/SOe3YmCJxy0"
               title="Second Video"
             />
-            <CardContent>
-              <Typography variant="body1" color="text.secondary">
+            <CardContent style={{ backgroundColor: "#2A7F62" }}>
+              <Typography
+                variant="body1"
+                color="white"
+                style={{ backgroundColor: "transparent" }}
+              >
                 Disco Stranger - The Less I Think (Lyric video)
               </Typography>
             </CardContent>
@@ -242,49 +250,54 @@ const Home = () => {
               src="https://www.youtube.com/embed/abJ0IQIawzo"
               title="Third Video"
             />
-            <CardContent>
-              <Typography variant="body1" color="text.secondary">
+            <CardContent style={{ backgroundColor: "#2A7F62" }}>
+              <Typography
+                variant="body1"
+                color="white"
+                style={{ backgroundColor: "transparent" }}
+              >
                 Disco Stranger - Evil, In a Sense (Music Video)
               </Typography>
             </CardContent>
           </Card>
         </div>
         <div
-        style={{ display: "flex", flexDirection: "column", marginTop: "20px" }}
-      >
-        
-        {/* Spotify iframe */}
-        <iframe
-          style={{ borderRadius: "0px", marginBottom: "10px", margin:'5px' }}
-          src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
-          width="98%"
-          height="450"
-          frameBorder="0"
-          allowFullScreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-        {/* Apple Music iframe */}
-        <iframe
-          allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-          frameBorder="0"
-          height="450"
           style={{
-            width: "100%",
-            maxWidth: "98%",
-            overflow: "hidden",
-            borderRadius: "0px",
-            margin: "5px",
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "20px",
           }}
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-          src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
-          loading="lazy"
-        ></iframe>
-      </div>
-      <ContactUs />
+        >
+          {/* Spotify iframe */}
+          <iframe
+            style={{ borderRadius: "0px", marginBottom: "10px", margin: "5px" }}
+            src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
+            width="98%"
+            height="450"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+          {/* Apple Music iframe */}
+          <iframe
+            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+            frameBorder="0"
+            height="450"
+            style={{
+              width: "100%",
+              maxWidth: "98%",
+              overflow: "hidden",
+              borderRadius: "0px",
+              margin: "5px",
+            }}
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+            src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <ContactUs />
       </Paper>
-      {/* Parent div for iframes */}
-      
     </div>
   );
 };

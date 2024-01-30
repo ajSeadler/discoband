@@ -54,6 +54,7 @@ export default Contact;
 const StyledContactForm = styled.div`
   width: 90%;
   max-width: 400px;
+  color: white;
   margin: 0 auto; /* Center the component */
   text-align: center;
   margin-bottom: 5%;
@@ -91,7 +92,7 @@ const StyledContactForm = styled.div`
     input[type="submit"] {
       margin-top: 2rem;
       cursor: pointer;
-      background: radial-gradient(circle, #FABC2A, #5CA4A9);
+      background: #2A7F62;
       color: black;
       border: none;
     }

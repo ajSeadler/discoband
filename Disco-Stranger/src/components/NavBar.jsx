@@ -48,7 +48,7 @@ const NavBar = () => {
       <ListItem button component={Link} to="/contact">
         <ListItemText primary="Contact" style={{ fontFamily: 'Gasoek One' }} />
       </ListItem>
-      {/* Logo as a footer */}
+     
       <ListItem style={{ position: "absolute", bottom: 0, width: "100%" }}>
         <img
           className="logodes"
@@ -66,11 +66,11 @@ const NavBar = () => {
     <AppBar
       position="sticky"
       sx={{
-        background: `url("/testwave.svg")`, // Use the imported NavWave SVG
+        background: `url("/testwave.svg")`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        border: "none", // Remove border
-        boxShadow: "none", // Remove shadow
+        border: "none", 
+        boxShadow: "none", 
         zIndex: 1
       }}
     >

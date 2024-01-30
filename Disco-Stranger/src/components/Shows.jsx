@@ -20,11 +20,11 @@ import CloseIcon from "@mui/icons-material/Close";
 const ShowsPaper = styled(Paper)(({ theme }) => ({
   padding: "50px",
   marginTop: "-3%",
-  background: `radial-gradient(circle, #1C6E8C, #2A7F62)`, // Light gray background
+  background: `radial-gradient(circle, #1C6E8C, #2A7F62)`,
   boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
 
   [theme.breakpoints.down("sm")]: {
-    marginTop: "-10%", // Adjust the margin for smaller screens
+    marginTop: "-10%", 
   },
 }));
 
@@ -40,7 +40,7 @@ const ShowCard = styled(Card)(({ theme }) => ({
   backgroundColor: "#89909F",
   color: "white",
   maxHeight: "100%",
-  height: "100%", // Set a fixed height for the card
+  height: "100%", 
   overflow: "hidden",
   cursor: "pointer",
   transition: "transform 0.2s ease-in-out",
@@ -60,7 +60,7 @@ const ShowCardContent = styled(CardContent)(({ theme }) => ({
 const ShowImage = styled("img")(({ theme }) => ({
   width: "100%",
   height: "100%",
-  maxHeight: "100%", // Ensure the image doesn't exceed the dialog height
+  maxHeight: "100%", 
   borderRadius: "0px",
   boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
   objectFit: "contain",
@@ -69,7 +69,7 @@ const ShowImage = styled("img")(({ theme }) => ({
 
 const FullImageDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialog-paper": {
-    // maxWidth: '50%', // Adjust the maximum width as needed
+    // maxWidth: '50%', 
     // width: '80%',
     // maxHeight: '50%',
     // height: '80%',
@@ -96,7 +96,7 @@ const shows = [
     price: '$8.00 21 & up. $11 under 21.',
     image: "/pics/2-1-24.jpg",
   },
-  // Add more upcoming shows if needed
+  
 ];
 
 const pastShows = [
@@ -178,7 +178,7 @@ const pastShows = [
     image: "pics/9-3-21.jpg",
   },
 
-  // Add more past shows if needed
+  // Add more past shows when i get more images
 ];
 
 const showsPerPage = 4;
@@ -208,7 +208,7 @@ const Shows = () => {
       const topOffset = pastShowsAnchor.offsetTop;
       window.scrollTo({
         top: topOffset,
-        behavior: "smooth", // Optional: Use smooth scrolling
+        behavior: "smooth",
       });
     }
   };
