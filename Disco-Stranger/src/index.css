@@ -252,7 +252,7 @@ h1 {
     max-height: 100%;
     border: none;
     height: 300px;
-    margin-top: -20%;
+    margin-top: -30%;
     display: flex;
     flex-direction: column;
     background-size: contain;
@@ -272,7 +272,9 @@ h1 {
     margin-top: -12%;
   }
 
-  
+  .custom-font {
+    margin-top: 20%;
+  }
   
 
   .hero-text h4 {
@@ -302,6 +304,11 @@ h1 {
     flex-direction: column;
     margin-bottom: 20px;
   }
+ 
+  /* .video-sec-mobile {
+    margin-top: 60% !important;
+  } */
+
 }
 
 

@@ -12,6 +12,8 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import ContactUs from "./ContactUs";
+import Streaming from "./Streaming";
+import Media from "./Media";
 
 const HeroSection = styled(Paper)({
   position: "relative",
@@ -31,21 +33,6 @@ const HeroSection = styled(Paper)({
   "@media (max-width: 768px)": {
     height: "75vh",
   },
-});
-
-const ImageContainer = styled("div")({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-});
-
-const Images = styled("div")({
-  display: "flex",
-  gap: "10px",
-  flexDirection: "row",
-  justifyContent: "center",
-  alignItems: "center",
 });
 
 const Image = styled("img")({
@@ -195,108 +182,12 @@ const Home = () => {
           border: "none",
         }}
       >
-        <Typography
-          variant="h4"
-          gutterBottom
-          style={{ color: "white", fontFamily: "Bebas Neue" }}
-        >
-          Watch Our Latest Videos
-        </Typography>
-        <div className="video-home" style={{border:'none', boxShadow:'none', }}>
-          {/* First Video */}
+        
 
-          <Card className="video-card" sx={{ boxShadow: 'none', border: 'none', }}>
-            <CardMedia
-              component="iframe"
-              height="200"
-              src="https://www.youtube.com/embed/Imyu7VLuy98"
-              title="First Video"
-              sx={{ boxShadow: 'none', border: 'none' }}
-            />
-            <CardContent style={{ backgroundColor: "#2A7F62" }}>
-              <Typography
-                variant="body1"
-                color="white"
-                style={{ fontFamily:'YourCustomFont'}}
-              >
-                Disco Stranger - LIVE @ Speakeasy / Special Jam
-              </Typography>
-            </CardContent>
-          </Card>
+        <Media />
 
-          {/* Second Video */}
-          <Card className="video-card" sx={{ boxShadow: 'none', border: 'none' }}>
-            <CardMedia
-              component="iframe"
-              height="200"
-              src="https://www.youtube.com/embed/SOe3YmCJxy0"
-              title="Second Video"
-            />
-            <CardContent style={{ backgroundColor: "#2A7F62" }}>
-              <Typography
-                variant="body1"
-                color="white"
-                style={{ fontFamily:'YourCustomFont'}}
-              >
-                Disco Stranger - The Less I Think (Lyric video)
-              </Typography>
-            </CardContent>
-          </Card>
-
-          {/* Third Video */}
-          <Card className="video-card" sx={{ boxShadow: 'none', border: 'none' }}>
-            <CardMedia
-              component="iframe"
-              height="200"
-              src="https://www.youtube.com/embed/abJ0IQIawzo"
-              title="Third Video"
-            />
-            <CardContent style={{ backgroundColor: "#2A7F62" }}>
-              <Typography
-                variant="body1"
-                color="white"
-                style={{ fontFamily:'YourCustomFont'}}
-              >
-                Disco Stranger - Evil, In a Sense (Music Video)
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            marginTop: "20px",
-          }}
-        >
-          {/* Spotify iframe */}
-          <iframe
-            style={{ borderRadius: "0px", marginBottom: "10px", margin: "5px" }}
-            src="https://open.spotify.com/embed/artist/3SwSE7OtWzLOrc32Eq54gO?utm_source=generator&theme=0"
-            width="98%"
-            height="450"
-            frameBorder="0"
-            allowFullScreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          ></iframe>
-          {/* Apple Music iframe */}
-          <iframe
-            allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-            frameBorder="0"
-            height="450"
-            style={{
-              width: "100%",
-              maxWidth: "98%",
-              overflow: "hidden",
-              borderRadius: "0px",
-              margin: "5px",
-            }}
-            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-            src="https://embed.music.apple.com/us/album/disco-stranger-ep/1647759571"
-            loading="lazy"
-          ></iframe>
-        </div>
+        <Streaming />
+        
         <ContactUs />
       </Paper>
     </div>

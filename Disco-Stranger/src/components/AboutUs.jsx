@@ -31,11 +31,11 @@ const AboutUs = () => {
       });
     });
 
-    // Use Promise.all to wait for all promises to resolve
+    // Use Promise.all to wait for all promises to finish
     Promise.all(promises).then(() => {
       setLoading(false); // All images have loaded, update the loading state
     });
-  }, [images]); // Dependency array ensures this runs whenever images change
+  }, [images]); // Dependency - this runs whenever the images change
 
   return (
     <div className='about-pg'>
@@ -78,13 +78,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Spinner for the image above the bio */}
-      {loading && (
-        <div className="col-md-12 text-center">
-          <p>Loading...</p>
-          <ClipLoader color="#36D7B7" size={50} />
-        </div>
-      )}
+      
 
       {/* SVG Wave Divider */}
       <div class="custom-shape-divider-bottom-1706069005">
@@ -99,7 +93,7 @@ const AboutUs = () => {
         <div className="container">
           <div className="row justify-content-center">
             {loading && (
-              <div className="col-md-12 text-center">
+              <div className="col-md-12 text-center" style={{fontFamily:'YourCustomFont', color:'white'}}>
                 <p>Loading...</p>
                 <ClipLoader color="#36D7B7" size={50} /> 
               </div>
