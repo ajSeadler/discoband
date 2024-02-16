@@ -132,8 +132,8 @@ const Shows = () => {
       {/* Conditionally render the loader if loading is true */}
       {loading && (
         <div className="loader-overlay">
-        <ClipLoader color="#36D7B7" loading={loading} size={50} />
-      </div>
+          <ClipLoader color="#36D7B7" loading={loading} size={50} />
+        </div>
       )}
 
       {!loading && (
@@ -181,11 +181,7 @@ const Shows = () => {
           </ShowsContainer>
 
           {/* Pagination */}
-          <Grid
-            container
-            justifyContent="center"
-            style={{ marginTop: "20px" }}
-          >
+          <Grid container justifyContent="center" style={{ marginTop: "20px" }}>
             {[...Array(Math.ceil(pastShows.length / showsPerPage)).keys()].map(
               (pageNumber) => (
                 <Button

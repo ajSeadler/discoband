@@ -28,17 +28,17 @@ const AboutUs = () => {
                 ABOUT US
               </h4>
               {imageLoading ? (
-          <div className="text-center">
-            <ClipLoader color="#36D7B7" size={50} />
-          </div>
-        ) : (
-          <img
-            src="/pics/IMG_2050.JPG"
-            alt="Band Image"
-            className="img-fluid rounded mb-4"
-            onLoad={() => setImageLoading(false)} // Set imageLoading to false when image is loaded
-          />
-        )}
+                <div className="text-center">
+                  <ClipLoader color="#36D7B7" size={50} />
+                </div>
+              ) : (
+                <img
+                  src="/pics/IMG_2050.JPG"
+                  alt="Band Image"
+                  className="img-fluid rounded mb-4"
+                  onLoad={() => setImageLoading(false)} // Set imageLoading to false when image is loaded
+                />
+              )}
               <p className="mb-4">
                 Disco Stranger originally started out as a cover band under the
                 name "Steve French and Company" until they heard one too many

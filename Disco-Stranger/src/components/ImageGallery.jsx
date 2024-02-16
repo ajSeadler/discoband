@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { ClipLoader } from 'react-spinners';
+import React, { useState, useEffect } from "react";
+import { ClipLoader } from "react-spinners";
 
 const ImageGallery = () => {
   const images = [
-    './pics/greenblue.jpg',
-    './pics/bluePink.jpg',
-    './pics/discocrit.jpg',
-    './pics/vanguard1.jpg',
-    './pics/drew3.JPG',
-    './pics/drewnajbcdark.JPEG',
-    './pics/colgreenbc.JPEG',
-    './pics/drewnajclosebc.JPEG',
-    './pics/deepellum.jpeg',
-    './pics/drewdeepE.jpg',
-    './pics/coltondeepE.jpg',
-    './pics/ajdeepE.jpg',
-    './pics/drew2bc.JPEG',
+    "./pics/greenblue.jpg",
+    "./pics/bluePink.jpg",
+    "./pics/discocrit.jpg",
+    "./pics/vanguard1.jpg",
+    "./pics/drew3.JPG",
+    "./pics/drewnajbcdark.JPEG",
+    "./pics/colgreenbc.JPEG",
+    "./pics/drewnajclosebc.JPEG",
+    "./pics/deepellum.jpeg",
+    "./pics/drewdeepE.jpg",
+    "./pics/coltondeepE.jpg",
+    "./pics/ajdeepE.jpg",
+    "./pics/drew2bc.JPEG",
   ];
 
   const [loading, setLoading] = useState(true);
@@ -39,7 +39,10 @@ const ImageGallery = () => {
       <div className="container">
         <div className="row justify-content-center">
           {loading && (
-            <div className="col-md-12 text-center" style={{ fontFamily: 'YourCustomFont', color: 'white' }}>
+            <div
+              className="col-md-12 text-center"
+              style={{ fontFamily: "YourCustomFont", color: "white" }}
+            >
               <p>Stream our music while you wait...</p>
               <ClipLoader color="#36D7B7" size={50} />
             </div>
