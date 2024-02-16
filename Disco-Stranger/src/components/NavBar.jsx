@@ -20,6 +20,7 @@ const NavBar = () => {
 
   const toggleDrawer = (open) => (event) => {
     if (
+      // cool i guess, not like anyone would be able to use it though (shift & tab for mobile drawer)
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
     ) {
@@ -29,24 +30,24 @@ const NavBar = () => {
   };
 
   const navLinks = (
-    <List style={{ position: "relative", height: "100%" }}>
+    <List style={{ position: "relative", height: "100%", backgroundColor:'#32936F', color:'#fff', fontFamily:'YourCustomFont' }}>
       <Typography
         variant="h6"
-        style={{ textAlign: "center", margin: "10px", color: "#333", fontFamily:'Bebas Neue' }}
+        style={{ textAlign: "center", margin: "10px", color: "#FFF", fontFamily:'YourCustomFont' }}
       >
-        Disco Stranger
+        DISCO STRANGER
       </Typography>
       <ListItem button component={Link} to="/">
-        <ListItemText primary="Home" style={{ fontFamily: 'Gasoek One' }} />
+        <ListItemText primary="Home" style={{ fontFamily: 'YourCustomFont' }} />
       </ListItem>
       <ListItem button component={Link} to="/about">
-        <ListItemText primary="About" style={{ fontFamily: 'Gasoek One' }} />
+        <ListItemText primary="About" style={{ fontFamily: 'YourCustomFont' }} />
       </ListItem>
       <ListItem button component={Link} to="/shows">
-        <ListItemText primary="Shows" style={{ fontFamily: 'Gasoek One' }} />
+        <ListItemText primary="Shows" style={{ fontFamily: 'YourCustomFont' }} />
       </ListItem>
       <ListItem button component={Link} to="/contact">
-        <ListItemText primary="Contact" style={{ fontFamily: 'Gasoek One' }} />
+        <ListItemText primary="Contact" style={{ fontFamily: 'YourCustomFont' }} />
       </ListItem>
      
       <ListItem style={{ position: "absolute", bottom: 0, width: "100%" }}>
@@ -95,11 +96,12 @@ const NavBar = () => {
                 position: "absolute",
                 top: "80%",
                 marginTop: "25px",
-                fontFamily:'Gasoek One',
+                fontFamily:'YourCustomFont',
               }}
               PaperProps={{
                 style: {
                   backgroundColor: "#f5f5f5",
+                  
                 
                   
                 },

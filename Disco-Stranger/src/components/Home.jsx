@@ -17,6 +17,7 @@ import Media from "./Media";
 
 const HeroSection = styled(Paper)({
   position: "relative",
+  fontSize:'',
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -52,7 +53,7 @@ const Image = styled("img")({
 
 const ModalContainer = styled(DialogContent)({
   display: "flex",
-  background: `radial-gradient(circle, #2196F3, #E91E63)`,
+  background: '#001220',
   flexDirection: "column",
   alignItems: "center",
 });
@@ -138,7 +139,7 @@ const Home = () => {
         mouseX={mousePos.x}
         mouseY={mousePos.y}
       >
-        <div className="custom-font">
+        <div className="custom-font ds">
           <h3>DISCO STRANGER</h3>
         </div>
         <div className="images-container">
