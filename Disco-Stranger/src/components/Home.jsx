@@ -32,7 +32,7 @@ const HeroSection = styled(Paper)({
   background: `url('grnblob.svg')`,
   backgroundSize: "cover",
   "@media (max-width: 768px)": {
-    height: "75vh",
+    height: "100vh",
   },
 });
 
@@ -88,10 +88,10 @@ const Home = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/pics/Nat.jpg",
-    "/pics/drewhead.jpg",
-    "/pics/aj.jpg",
-    "/pics/col.jpg",
+    "/pics/compressed/Nat.jpg",
+    "/pics/compressed/drewhead.jpg",
+    "/pics/compressed/aj.jpg",
+    "/pics/compressed/col.jpg",
   ];
   const names = [
     "Nathaniel Lee",
@@ -134,10 +134,6 @@ const Home = () => {
         elevation={1}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onMouseMove={handleMouseMove}
-        isHovered={isHovered}
-        mouseX={mousePos.x}
-        mouseY={mousePos.y}
       >
         <div className="custom-font ds">
           <h3>DISCO STRANGER</h3>

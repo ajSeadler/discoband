@@ -3,19 +3,19 @@ import { ClipLoader } from "react-spinners";
 
 const ImageGallery = () => {
   const images = [
-    "./pics/greenblue.jpg",
-    "./pics/bluePink.jpg",
-    "./pics/discocrit.jpg",
-    "./pics/vanguard1.jpg",
-    "./pics/drew3.JPG",
-    "./pics/drewnajbcdark.JPEG",
-    "./pics/colgreenbc.JPEG",
-    "./pics/drewnajclosebc.JPEG",
-    "./pics/deepellum.jpeg",
-    "./pics/drewdeepE.jpg",
-    "./pics/coltondeepE.jpg",
-    "./pics/ajdeepE.jpg",
-    "./pics/drew2bc.JPEG",
+    "./pics/compressed/greenblue.jpg",
+    "./pics/compressed/bluePink.jpg",
+    "./pics/compressed/discocrit.jpg",
+    "./pics/compressed/vanguard1.jpg",
+    "./pics/compressed/drew3.JPG",
+    "./pics/compressed/drewnajbcdark.JPEG",
+    "./pics/compressed/colgreenbc.JPEG",
+    "./pics/compressed/drewnajclosebc.JPEG",
+    "./pics/compressed/deepellum.jpeg",
+    "./pics/compressed/drewdeepE.jpg",
+    "./pics/compressed/coltondeepE.jpg",
+    "./pics/compressed/ajdeepE.jpg",
+    "./pics/compressed/drew2bc.JPEG",
   ];
 
   const [loading, setLoading] = useState(true);

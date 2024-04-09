@@ -96,7 +96,7 @@ const Shows = () => {
     // Simulating loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // Adjust the time as needed
+    }, 0); // Adjust the time as needed
 
     // Cleanup function to clear the timeout
     return () => clearTimeout(timer);
@@ -140,6 +140,8 @@ const Shows = () => {
         <ShowsPaper elevation={3}>
           <div className="custom-font-shows">
             <h1>UPCOMING SHOWS</h1>
+            <h2>5/25/24 - Beats Music Festival - Scissortail Park 5:00-5:45pm</h2>
+            <h2>5/26/24 - Paseo Arts Festival - 6:30-7:30pm</h2>
           </div>
           <ShowsContainer container spacing={4} style={{ marginBottom: "3%" }}>
             {shows.map((show, index) => (
